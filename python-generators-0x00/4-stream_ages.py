@@ -69,4 +69,5 @@ def calculate_average_age():
     if count_users == 0:
         return 0.0  # Returns 0.0 as the average age.
     
-    return truediv(total_age, count_users)
+    average = total_age / count_users
+    return average
