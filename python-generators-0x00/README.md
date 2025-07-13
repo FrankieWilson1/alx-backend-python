@@ -52,10 +52,8 @@ All tasks interact with a MySQL database.
 - **`user_data.csv`**: A comma-separated values file containing mock user data that is used by `seed.py` to populate the database. Ensure this file is in the same directory as the scripts.
 - **`0-stream_users.py`**: Contains the `stream_users()` generator function which connects to the database and yields user records one by one, demonstrating basic memory-efficient data streaming.
 - **`1-batch_processing.py`**: Implements `stream_users_in_batches(batch_size)` generator to fetch data in predefined batches. It also includes `batch_processing(batch_size)` which consumes these batches, filters users (age > 25), and prints them directly, handling `OSError` (e.g., Broken Pipe) gracefully within the function.
-- **`2-main.py`**: A driver script designed to run `1-batch_processing.py`'s `batch_processing` function. It includes `OSError` handling for cases where output is piped (e.g., `| head -n 5`), ensuring graceful exit.
 - **`2-lazy_paginate.py`**: Provides `paginate_users(page_size, offset)` for fetching specific pages from the database. It then defines `lazy_paginate(page_size)`, a generator that lazily yields pages of users, fetching them only when requested by the consumer.
-- **`3-main.py`**: A driver script for `2-lazy_paginate.py`. It iterates through the pages yielded by `lazy_paginate` and prints individual users, incorporating `OSError` handling for piped output scenarios.
-- **`3-memory_efficient_avg.py`**: Features `stream_user_ages()` generator that yields user ages one by one. It also contains `calculate_average_age()` which consumes these ages to compute the average without loading all data into memory, adhering to a two-loop limit for the entire calculation process.
+- **`4-stream.py`**: Features `stream_user_ages()` generator that yields user ages one by one. It also contains `calculate_average_age()` which consumes these ages to compute the average without loading all data into memory, adhering to a two-loop limit for the entire calculation process.
 
 ## Setup and Installation
 
@@ -143,7 +141,7 @@ python3 3-main.py | head -n 10
 Calculates the average age of users without loading all ages into memory.
 
 ```bash
-python3 3-memory_efficient_avg.py
+python3 4-stream_ages.py
 ```
 
 ## Key Concepts Demonstrated
