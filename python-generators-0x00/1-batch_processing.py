@@ -31,7 +31,7 @@ def stream_users_in_batches(batch_size):
             return
         
         cursor = connection.cursor(dictionary=True, buffered=True)
-        select_query = f"SELECT user_id, name, email, age FROM {TABLE_NAME}"
+        select_query = f"SELECT user_id, name, email, age FROM user_data"
         cursor.execute(select_query)
         
         while True: # Loop (total): Fetches batches of data
