@@ -1,4 +1,5 @@
 from decimal import Decimal
+from operator import truediv
 import mysql.connector
 import sys
 
@@ -68,4 +69,4 @@ def calculate_average_age():
     if count_users == 0:
         return 0.0  # Returns 0.0 as the average age.
     
-    return total_age
+    return truediv(total_age, count_users)
