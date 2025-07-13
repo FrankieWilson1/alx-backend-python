@@ -35,5 +35,5 @@ By completing this project, you will:
 To get started with these projects, clone the repository to your local machine:
 
 ```bash
-git clone [https://github.com/FrankieWilson1/alx-backend-python.git](https://github.com/FrankieWilson1/alx-backend-python.git)
+git clone https://github.com/FrankieWilson1/alx-backend-python.git
 cd alx-backend-python
