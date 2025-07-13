@@ -36,13 +36,15 @@ All tasks interact with a MySQL database.
 ```
 .
 ├── 0-stream_users.py
+├── 1-main.py             # Driver script for 0-stream_users.py
 ├── 1-batch_processing.py
 ├── 2-main.py             # Driver script for 1-batch_processing.py
 ├── 2-lazy_paginate.py
 ├── 3-main.py             # Driver script for 2-lazy_paginate.py
-├── 4-main.py             # Driver script for 3-memory_efficient_avg.py
-├── 3-memory_efficient_avg.py # (Assuming this is the final name for the avg task)
+├── 4-stream.py
+├── 5-main.py             # Driver script for 4-stream.py
 ├── seed.py
+├── 0-main.py             # Driver script for seed.py
 └── user_data.csv         # CSV file containing mock user data for seeding the database
 ```
 

@@ -32,7 +32,7 @@ def paginate_users(page_size, offset):
         cursor = connection.cursor(dictionary=True, buffered=True)
         
         # Placeholders are used to safely pass page_size and offset args.
-        select_query = f"SELECT user_id, name, email, age FROM {TABLE_NAME} LIMIT %s OFFSET %s"
+        select_query = f"SELECT * FROM user_data LIMIT %s OFFSET %s"
         cursor.execute(select_query, (page_size, offset))
         
         # All the results for this specific page.
