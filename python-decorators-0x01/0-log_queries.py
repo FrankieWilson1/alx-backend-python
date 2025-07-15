@@ -1,7 +1,7 @@
-import datetime
 import sqlite3
 import functools
 import sys
+from datetime import datetime
 
 #### decorator to lof SQL queries
 """ YOUR CODE GOES HERE"""
@@ -23,7 +23,7 @@ def log_queries(func):
             # Assuming the first positional argument is the query
             query_to_log = args[0]
             
-        start_time = datetime.datetime.now()
+        start_time = datetime.now()
 
         if query_to_log:
             # Logs the query before execution
@@ -36,7 +36,7 @@ def log_queries(func):
             )
 
         results = func(*args, **kwargs)
-        endtime = datetime.datetime.now()
+        endtime = datetime.now()
         execute_time = endtime - start_time
         
         print(f"[{endtime.strftime('%Y-%m-%d %H:%M:%S')}] Qury completed in {execute_time.total_seconds():.4f} secons.", file=sys.stdout)
