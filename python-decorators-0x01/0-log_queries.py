@@ -1,10 +1,10 @@
+import datetime
 import sqlite3
 import functools
 import sys
 
 #### decorator to lof SQL queries
 """ YOUR CODE GOES HERE"""
-
 
 def log_queries(func):
     """
@@ -22,18 +22,24 @@ def log_queries(func):
         elif args:
             # Assuming the first positional argument is the query
             query_to_log = args[0]
+            
+        start_time = datetime.datetime.now()
 
         if query_to_log:
             # Logs the query before execution
-            print(f"Executing SQL Query: '{query_to_log}'", file=sys.stdout)
+            print(f"[{start_time.strftime('%Y-%m-%d %H:%M:%S')}] Executing SQL Query: '{query_to_log}'", file=sys.stdout)
         else:
             # Handles cases where the query argument might not be found
             print(
-                f"Warning: No identifiable query argument found ofr function '{func.__name__}'",
+                f"[{start_time.strftime('%Y-%m-%d %H:%M-%S')}] Warning: No identifiable query argument found ofr function '{func.__name__}'",
                 file=sys.stderr,
             )
 
         results = func(*args, **kwargs)
+        endtime = datetime.datetime.now()
+        execute_time = endtime - start_time
+        
+        print(f"[{endtime.strftime('%Y-%m-%d %H:%M:%S')}] Qury completed in {execute_time.total_seconds():.4f} secons.", file=sys.stdout)
         return results
 
     return wrapper

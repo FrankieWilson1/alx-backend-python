@@ -30,6 +30,35 @@ By completing this project, you will:
 
 ---
 
+### 2. Python Decorators (0x01)
+
+**Directory:** [`python-decorators-0x01/`](./python-decorators-0x01/README.md)
+
+**About the Project:**
+This project delves into the powerful concept of Python decorators, showcasing their application in enhancing database interaction logic without modifying the core functionality of the operations. Through a series of practical tasks, this module demonstrates how decorators can be used to add cross-cutting concerns like logging, connection management, transaction handling, retry mechanisms, and result caching to database functions in a clean, reusable, and maintainable way.
+
+The tasks highlight the benefits of decorators in abstracting common patterns, promoting code reusability, and separating concerns within a backend application, particularly in the context of database operations.
+
+**Learning Objectives:**
+By completing this project, you will:
+-   **Understand and Create Decorators:** Grasp the fundamental concept of Python decorators and learn to implement them to wrap and modify functions.
+-   **Log Database Queries:** Implement a decorator to automatically log SQL queries and their execution times, aiding in debugging and performance monitoring.
+-   **Manage Database Connections:** Develop a decorator that handles the opening and closing of database connections, ensuring resources are properly managed and preventing connection leaks.
+-   **Implement Transactional Logic:** Create a decorator to manage database transactions, ensuring atomicity by automatically committing changes on success or rolling back on error.
+-   **Add Retry Mechanisms:** Design a decorator to automatically retry database operations that fail due to transient errors, improving application resilience.
+-   **Cache Query Results:** Develop a decorator to cache the results of database queries, reducing redundant database calls and improving application performance.
+-   **Apply Decorator Stacking:** Understand how to apply multiple decorators to a single function and the order of their execution.
+
+**Requirements:**
+-   Python 3.x
+-   `sqlite3` module (standard library)
+-   Familiarity with Python functions, arguments (`*args`, `**kwargs`), and nested functions.
+-   Basic understanding of SQL and database interactions.
+-   Familiarity with error handling (`try-except-finally`).
+-   Ability to use Git and GitHub for version control.
+
+---
+
 ## Getting Started
 
 To get started with these projects, clone the repository to your local machine:
