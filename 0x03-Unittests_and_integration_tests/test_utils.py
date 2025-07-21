@@ -45,8 +45,8 @@ class TestGetJson(unittest.TestCase):
     """
     
     @parameterized.expand([
-        ("http://example.com/api/data", {"key": "True"}),
-        ("http://example.com/api/empty", {"payload": False}),
+        ("http://example.com/", {"key": "True"}),
+        ("http://holberton.io", {"payload": False}),
     ])
     @patch('utils.requests.get')
     def test_get_json(self, test_url, test_payload, mock_get):
@@ -54,6 +54,7 @@ class TestGetJson(unittest.TestCase):
         Tests that get_json returns the expected Json payload and mocks HTTP requests.
         """
         mock_get.return_value.json.return_value = test_payload
+        
         result = get_json(test_url)
         
         # Assertions
