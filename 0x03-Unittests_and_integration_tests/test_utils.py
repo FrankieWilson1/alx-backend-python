@@ -21,3 +21,18 @@ class TestAccessNestedMap(unittest.TestCase):
         Test accessing a nested map with a valid path.
         """
         self.assertEqual(access_nested_map(nested_map, path), expected)
+
+    # --- 1. Using the assertRaises context manager to test for key raises---
+    @parameterized.expand([
+        ({}, ("a",), "a"),
+        ({"a": 1}, ("a", "b"), "b"),
+    ])
+    def test_access_nested_map_exception(self, nested_map, path,
+                                         expected_message):
+        """
+        Tests that access_nested_map raises a KeyError with the
+        expected message for invalid paths.
+        """
+        with self.assertRaises(KeyError) as cm:
+            access_nested_map(nested_map, path)
+        self.assertEqual(str(cm.exception), f"'{expected_message}'")
