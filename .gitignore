@@ -2,3 +2,8 @@ python-decorators-0x01/__pycache__
 python-generators-0x00/__pycache__
 python-decorators-0x01/helper_function.py
 python-decorators-0x01/users_db
+0x03-Unittests_and_integration_tests/client.py
+0x03-Unittests_and_integration_tests/fixtures.py
+0x03-Unittests_and_integration_tests/utils.py
+0x03-Unittests_and_integration_tests/.pytest_cache
+0x03-Unittests_and_integration_tests/__pycache__
