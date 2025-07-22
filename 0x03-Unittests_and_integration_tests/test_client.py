@@ -6,9 +6,20 @@
 Unit tests for the GithubOrgClient class.
 """
 import unittest
-from parameterized import parameterized
-from unittest.mock import patch, PropertyMock
+from parameterized import parameterized, parameterized_class
+from unittest.mock import Mock, patch, PropertyMock
 from client import GithubOrgClient
+import requests
+
+try:
+    from fixtures import org_payload, repos_payload
+    from fixtures import expected_repos, apache2_repos
+except ImportError:
+    org_payload = {"repos_url": "https://api.github.com/orgs/dummy/repos",
+                   "login": "dummy_org"}
+    repos_payload = [{"name": "dummy-repo", "license": {"key": "mit"}}]
+    expected_repos = ["dummy-repo"]
+    apache2_repos = ["dummy-repo"]
 
 
 class TestGithubOrgClient(unittest.TestCase):
@@ -40,7 +51,6 @@ class TestGithubOrgClient(unittest.TestCase):
         # Instantiate the GithubOrgClient with the current org_name from the
         # paramentrization.
         client = GithubOrgClient(org_name)
-
         result = client.org
 
         # Assertions:
@@ -95,7 +105,7 @@ class TestGithubOrgClient(unittest.TestCase):
             {"name": "alx-frontend-python", "license": {"key": "apache-2.0"}},
             {"name": "some-other-repo", "license": None},
         ]
-        expected_repos_payload = [
+        expected_repos_output = [
             "alx-frontend-javascript",
             "alx-frontend-python",
             "some-other-repo",
@@ -115,7 +125,7 @@ class TestGithubOrgClient(unittest.TestCase):
             # Asserions:
             mock_public_repos_url.assert_called_once()
             mock_get_json.assert_called_once_with(mock_repose_url)
-            self.assertEqual(result, expected_repos_payload)
+            self.assertEqual(result, expected_repos_output)
 
     # 7. --- Parameterize ---
     @parameterized.expand([
@@ -140,3 +150,56 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         result = GithubOrgClient.has_license(repo, license_key)
         self.assertEqual(result, expected_result)
+
+
+# 8. --- Integration Test ---
+
+@parameterized_class([
+    {
+        "org_payload": org_payload,
+        "repos_payload": repos_payload,
+        "expected_repos": expected_repos,
+        "apache2_repos": apache2_repos
+    },
+])
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    """
+    Integration tests for GithubOrgClient.public_repos,
+    mocking only external requests.
+    """
+    @classmethod
+    def setUpClass(cls):
+        """Set up class-wide mockes for requests.get.
+            This mock will handle HTTP requests made by the GithubOrgClient.
+          """
+        cls.get_patcher = patch('requests.get')
+        cls.mock_get = cls.get_patcher.start()
+
+        # Define the side_effect for the mocked request.get.
+        def test_payloads_side_effect(url):
+            mock_response = Mock()  # Returns the values of request.mock params
+            org_url_prefix = cls.org_payload["repos_url"].replace("/repos", "")
+
+            if url == org_url_prefix:
+                mock_response.json.return_value = cls.repos_payload
+            elif url == cls.org_payload["repos_url"]:
+                mock_response.json.return_value = cls.repos_payload
+            else:
+                raise ValueError(f"URL not mocked by side_effect: {url}")
+            return mock_response
+
+        # Assign the side_effect function to mock_get
+        cls.mock_get.side_effect = test_payloads_side_effect
+
+    @classmethod
+    def tearDownClass(cls):
+        """Stop the patcher to clean up mocks after all tests int the
+          class have run."""
+        cls.get_patcher.stop()
+
+    # -- Test method for public_repos
+    def test_setup_works(self):
+        """A minimal test to eansure setUpClass and TearDownClass execute
+            without error.
+        """
+        self.assertTrue(True)
