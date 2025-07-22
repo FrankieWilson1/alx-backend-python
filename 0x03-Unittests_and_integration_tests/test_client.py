@@ -79,3 +79,37 @@ class TestGithubOrgClient(unittest.TestCase):
             # Assertions:
             mock_org.assert_called_once()
             self.assertEqual(result, expected_repos_url)
+
+    @patch('client.get_json')
+    def test_public_repos(self, mock_get_json):
+        """
+        Tests that GithubOrgClient.public_repos returns the
+        expected list of repos and that both
+        _public_ropos_url and get_json are called once.
+        """
+        mock_api_repos_payload = [
+            {"name": "alx-frontend-javascript", "license": {"key": "mit"}},
+            {"name": "alx-frontend-python", "license": {"key": "apache-2.0"}},
+            {"name": "some-other-repo", "license": None},
+        ]
+        expected_repos_payload = [
+            "alx-frontend-javascript",
+            "alx-frontend-python",
+            "some-other-repo",
+        ]
+        mock_repose_url = "https://api.github.com/orgs/alx/repos"
+
+        mock_get_json.return_value = mock_api_repos_payload
+
+        with patch('client.GithubOrgClient._public_repos_url',
+                   new_callable=PropertyMock) as mock_public_repos_url:
+            mock_public_repos_url.return_value = mock_repose_url
+
+            client = GithubOrgClient("alx")
+
+            result = client.public_repos()
+
+            # Asserions:
+            mock_public_repos_url.assert_called_once()
+            mock_get_json.assert_called_once_with(mock_repose_url)
+            self.assertEqual(result, expected_repos_payload)
