@@ -17,7 +17,7 @@ except ImportError:
                    "login": "dummy_org"}
     repos_payload = [{"name": "dummy-repo", "license": {"key": "mit"}}]
     expected_repos = ["dummy-repo"]
-    apache2_repos = ["dummy-repo"]
+    apache2_repos = []
 
 
 class TestGithubOrgClient(unittest.TestCase):
@@ -112,6 +112,7 @@ class TestGithubOrgClient(unittest.TestCase):
 
 
 # --- Integration Test Class for Task 8 ---
+
 @parameterized_class([
     {
         "org_payload": org_payload,
@@ -136,11 +137,14 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
         def test_payloads_side_effect(url):
             mock_response = Mock()
-            org_url_prefix = cls.org_payload["repos_url"].replace("/repos", "")
+            expected_org_api_url = GithubOrgClient.ORG_URL.format(
+                org=cls.org_payload["login"])
 
-            if url == org_url_prefix:
+            expected_repos_api_url = cls.org_payload["repos_url"]
+
+            if url == expected_org_api_url:
                 mock_response.json.return_value = cls.org_payload
-            elif url == cls.org_payload["repos_url"]:
+            elif url == expected_repos_api_url:
                 mock_response.json.return_value = cls.repos_payload
             else:
                 raise ValueError(f"URL not mocked by side_effect: {url}")
@@ -156,9 +160,48 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """
         cls.get_patcher.stop()
 
+    def setUp(self):
+        """
+        Resets the mock's call history before each test method runs.
+        """
+        if hasattr(self, 'mock_get') and self.mock_get:
+            self.mock_get.reset_mock()
+
     def test_setup_works(self):
         """
         A minimal test to ensure setUpClass and TearDownClass execute
         without error.
         """
         self.assertTrue(True)
+
+    def test_public_repos(self):
+        """Tests that GithubOrgClient.public_repos returns the expected
+        list of repository names without a license filter.
+        """
+        client = GithubOrgClient(self.org_payload["login"])
+        repos = client.public_repos()
+        self.assertEqual(repos, self.expected_repos)
+
+        calls = self.mock_get.call_args_list
+        self.assertEqual(len(calls), 2)
+        expected_org_url = GithubOrgClient.ORG_URL.format(
+            org=self.org_payload["login"])
+        self.assertEqual(calls[0].args[0], expected_org_url)
+        expected_repos_url = self.org_payload["repos_url"]
+        self.assertEqual(calls[1].args[0], expected_repos_url)
+
+    def test_public_repos_with_license(self):
+        """Tests that GithubOrgClient.public_repos return the expected
+        list of repository names when filtered by a specific license.
+        """
+        client = GithubOrgClient(self.org_payload["login"])
+        repos = client.public_repos(license="apache-2.0")
+        self.assertEqual(repos, self.apache2_repos)
+
+        calls = self.mock_get.call_args_list
+        self.assertEqual(len(calls), 2)
+        expected_org_url = GithubOrgClient.ORG_URL.format(
+            org=self.org_payload["login"])
+        self.assertEqual(calls[0].args[0], expected_org_url)
+        expected_repos_url = self.org_payload["repos_url"]
+        self.assertEqual(calls[1].args[0], expected_repos_url)
