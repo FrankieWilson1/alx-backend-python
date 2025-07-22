@@ -54,6 +54,7 @@ class TestGithubOrgClient(unittest.TestCase):
         self.assertEqual(result, test_payload)
 
     # 5. --- Mocking a Property ---
+
     def test_public_repos_url(self):
         """
         Tests that _public_repos_url returns the correct URL based on
@@ -79,6 +80,8 @@ class TestGithubOrgClient(unittest.TestCase):
             # Assertions:
             mock_org.assert_called_once()
             self.assertEqual(result, expected_repos_url)
+
+    # 6. --- More Patching ---
 
     @patch('client.get_json')
     def test_public_repos(self, mock_get_json):
@@ -113,3 +116,27 @@ class TestGithubOrgClient(unittest.TestCase):
             mock_public_repos_url.assert_called_once()
             mock_get_json.assert_called_once_with(mock_repose_url)
             self.assertEqual(result, expected_repos_payload)
+
+    # 7. --- Parameterize ---
+    @parameterized.expand([
+        # Test case 1: Repo has the specific license
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        # Test case 2: Repo has a different license
+        ({"license": {"key": "other_license"}}, "my_license", False),
+        # Test case 3: Repo has a license but key is None
+        ({"license": {"key": None}}, "my_license", False),
+        # Test case 4: Repo has no license key
+        ({"license": None}, "my_license", False),
+        # Test case 5: Repo directory desn't even have a license key
+        ({}, "my_license", False),
+        # Matching license but additional fileds present (shouldn't break)
+        ({"license": {"key": "my_license", "name": "MIT"}},
+         "my_license", True),
+    ])
+    def test_has_license(self, repo, license_key, expected_result):
+        """
+        Tests that GithubOrgClient.has_license returns the correc
+        boolean value
+        """
+        result = GithubOrgClient.has_license(repo, license_key)
+        self.assertEqual(result, expected_result)
