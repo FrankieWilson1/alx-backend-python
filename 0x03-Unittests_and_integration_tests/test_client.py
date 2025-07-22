@@ -9,7 +9,6 @@ import unittest
 from parameterized import parameterized, parameterized_class
 from unittest.mock import Mock, patch, PropertyMock
 from client import GithubOrgClient
-import requests
 
 try:
     from fixtures import org_payload, repos_payload
@@ -203,3 +202,14 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
             without error.
         """
         self.assertTrue(True)
+
+
+# Define Decorator
+TestIntegrationGithubOrgClient = parameterized_class([
+    {
+        "org_payload": org_payload,
+        "repos_payload": repos_payload,
+        "expected_repos": expected_repos,
+        "apache2_repos": apache2_repos
+    },
+])(TestIntegrationGithubOrgClient)  # Apply decorator
