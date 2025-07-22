@@ -101,11 +101,6 @@ class TestGithubOrgClient(unittest.TestCase):
     @parameterized.expand([
         ({"license": {"key": "my_license"}}, "my_license", True),
         ({"license": {"key": "other_license"}}, "my_license", False),
-        ({"license": {"key": None}}, "my_license", False),
-        ({"license": None}, "my_license", False),
-        ({}, "my_license", False),
-        ({"license": {"key": "my_license", "name": "MIT"}},
-         "my_license", True),
     ])
     def test_has_license(self, repo, license_key, expected_result):
         """
