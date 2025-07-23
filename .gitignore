@@ -7,3 +7,6 @@ python-decorators-0x01/users_db
 0x03-Unittests_and_integration_tests/utils.py
 0x03-Unittests_and_integration_tests/.pytest_cache
 0x03-Unittests_and_integration_tests/__pycache__
+venv/
+messaging_app/messaging_app/__pycache__/settings.cpython-312.pyc
+messaging_app/messaging_app/__pycache__/__init__.cpython-312.pyc
