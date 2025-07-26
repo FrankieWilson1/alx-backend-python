@@ -10,3 +10,14 @@ python-decorators-0x01/users_db
 venv/
 messaging_app/messaging_app/__pycache__/settings.cpython-312.pyc
 messaging_app/messaging_app/__pycache__/__init__.cpython-312.pyc
+messaging_app/messaging_app/*.pyc
+messaging_app/messaging_app/*.pyo
+messaging_app/messaging_app/*.pyd
+messaging_app/*.env
+messaging_app/.idea/
+# Django
+messaging_app/db.sqlite3
+messaging_app/media
+messaging_app/static
+messaging_app/local_settings.py
+env
