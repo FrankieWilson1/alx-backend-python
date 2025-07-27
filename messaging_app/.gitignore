@@ -4,3 +4,5 @@ messaging_app/__pycache__/urls.cpython-313.pyc
 chats/__pycache__/
 chats/migrations/0001_initial.py
 chats/migrations/__pycache__/
+env_win
+env_win/
