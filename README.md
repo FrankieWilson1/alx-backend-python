@@ -59,10 +59,62 @@ By completing this project, you will:
 
 ---
 
+### 3. Messaging Application API
+
+**Directory:** [`messaging_app/`](./messaging_app/README.md)
+
+**About the Project:**
+This project involves building a RESTful API for a real-time messaging application using Django and Django REST Framework. It covers modeling relationships (Users, Conversations, Messages), handling UUIDs as primary keys, implementing serializers for complex data structures, setting up URL routing with DRF routers, and developing robust API views for CRUD operations. It emphasizes best practices for backend API development and data management, laying the groundwork for a scalable communication platform.
+
+**Learning Objectives:**
+By completing this project, you will:
+-   **Design and Implement Django Models:** Create models with appropriate fields, relationships (e.g., Many-to-Many for Conversation participants), and custom primary keys (UUIDs).
+-   **Develop Django REST Framework Serializers:** Build `ModelSerializer` classes to convert complex model instances into native Python datatypes and vice versa, handling nested relationships.
+-   **Configure API Endpoints:** Set up URL routing using `DefaultRouter` and `path` for a clean and scalable API structure.
+-   **Implement DRF ViewSets:** Develop `ModelViewSet` classes to provide full CRUD functionality for Users, Conversations, and Messages.
+-   **Manage Data Relationships:** Effectively handle relationships between models (e.g., participants in a conversation, sender of a message).
+-   **Apply API Best Practices:** Implement validation, authentication, and permission concepts for secure and robust API design.
+-   **Use Git for Project Management:** Maintain a clean and organized Git history for a multi-module repository.
+
+**Requirements:**
+-   Proficiency in Python 3.x.
+-   Strong understanding of Django models and ORM.
+-   Familiarity with Django REST Framework concepts (Serializers, ViewSets, Routers).
+-   Basic knowledge of RESTful API principles.
+-   Understanding of database operations (SQLite).
+-   Ability to use Git and GitHub for version control.
+
+---
+
+### 4. Unit and Integration Tests (0x03)
+
+**Directory:** [`0x03-unittests_and_integrations/`](./0x03-unittests_and_integrations/README.md)
+
+**About the Project:**
+This project focuses on the crucial aspects of testing in Python backend development. It guides you through writing effective unit tests for individual components of your application and integration tests to ensure different parts of your system work together seamlessly. You will learn to use Python's `unittest` framework, mock external dependencies, and design comprehensive test suites that enhance code reliability and maintainability.
+
+**Learning Objectives:**
+By completing this project, you will:
+-   **Understand Unit Testing Principles:** Grasp the importance of testing, test-driven development (TDD), and the characteristics of good unit tests.
+-   **Write Unit Tests with `unittest`:** Learn to use Python's built-in `unittest` module for creating test cases, test suites, and running tests.
+-   **Mock Dependencies:** Master the concept of mocking to isolate units of code under test from external dependencies (e.g., databases, external APIs).
+-   **Implement Integration Tests:** Design and write tests that verify the interaction between different modules or services in your application.
+-   **Handle Test Fixtures:** Learn to set up and tear down test environments using `setUp` and `tearDown` methods.
+-   **Improve Code Reliability:** Understand how thorough testing contributes to more robust and error-free applications.
+
+**Requirements:**
+-   Proficiency in Python 3.x.
+-   Familiarity with the `unittest` module.
+-   Understanding of mocking concepts.
+-   Basic knowledge of software architecture and module interactions.
+-   Ability to use Git and GitHub for version control.
+
+---
+
 ## Getting Started
 
 To get started with these projects, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/FrankieWilson1/alx-backend-python.git
+git clone [https://github.com/FrankieWilson1/alx-backend-python.git](https://github.com/FrankieWilson1/alx-backend-python.git)
 cd alx-backend-python

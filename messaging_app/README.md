@@ -6,13 +6,15 @@ This project is a backend API for a real-time messaging application, built with 
 
 ## Features
 
-* **User Management:** Custom user model with unique UUIDs.
+* **User Management:** API endpoints for creating, listing, retrieving, updating, and deleting user accounts with unique UUIDs.
 * **Conversation Management:**
     * Create new conversations with multiple participants.
     * List and retrieve existing conversations.
+    * Update and delete conversations.
 * **Message Management:**
     * Send messages within existing conversations.
     * List and retrieve messages for specific conversations.
+    * Update and delete messages.
 * **Django REST Framework:** Leverages DRF for efficient API development, serialization, and viewset handling.
 * **SQLite Database:** Simple, file-based database for development.
 
@@ -105,7 +107,32 @@ The following API endpoints are available under the `/api/` prefix:
 
 ### Users
 
-While there isn't a dedicated User ViewSet exposed by default, the custom User model is central to the application's authentication and relationships. You can manage users via the Django Admin.
+Endpoints for managing user accounts. Users can be created, listed, retrieved, updated, and deleted.
+
+- **List all users / Create a new user:**
+    - **URL:** `/api/users/`
+    - **Method:** GET (list), POST (create)
+
+    **POST Request Body Example (JSON):**
+    ```json
+    {
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "email": "jane.doe@example.com",
+        "phone_number": "+1234567890",
+        "role": "participant",
+        "password": "strong-secure-password-123"
+    }
+    ```
+    (Note: The `password` is required for creation and will be automatically hashed by the API. The `user_id` and `created_at` are read-only and generated automatically.)
+
+    **Permissions:** IsAuthenticated (for GET), AllowAny (for POST, depending on project requirements)
+
+- **Retrieve, Update, or Delete a specific user:**
+    - **URL:** `/api/users/{user_id}/` (e.g., `/api/users/a1b2c3d4-e5f6-7890-1234-567890abcdef/`)
+    - **Method:** GET (retrieve), PUT/PATCH (update), DELETE (delete)
+
+    **Permissions:** IsAuthenticated (e.g., IsOwnerOrAdmin for update/delete, IsAuthenticated for retrieve)
 
 ### Conversations
 
@@ -128,7 +155,7 @@ While there isn't a dedicated User ViewSet exposed by default, the custom User m
     - **URL:** `/api/conversations/{conversation_id}/` (e.g., `/api/conversations/a1b2c3d4-e5f6-7890-1234-567890abcdef/`)
     - **Method:** GET (retrieve), PUT/PATCH (update), DELETE (delete)
 
-    **Permissions:** IsAuthenticated
+    **Permissions:** IsAuthenticated (e.g., IsParticipant or IsOwner)
 
 ### Messages
 
@@ -151,13 +178,13 @@ While there isn't a dedicated User ViewSet exposed by default, the custom User m
     - **URL:** `/api/messages/{message_id}/` (e.g., `/api/messages/a0b0c0d0-e0f0-1000-2000-300040005000/`)
     - **Method:** GET (retrieve), PUT/PATCH (update), DELETE (delete)
 
-    **Permissions:** IsAuthenticated
+    **Permissions:** IsAuthenticated (e.g., IsSender or IsOwner)
 
 ## Testing the API
 
 You can test the API using tools like:
 
-- **Browser:** Navigate to `http://127.0.0.1:8000/api/conversations/` to see the browsable API.
+- **Browser:** Navigate to `http://127.0.0.1:8000/api/` (after running `python manage.py runserver`) to see the browsable API endpoints.
 - **curl:** Command-line tool for making requests.
 - **Postman / Insomnia:** Desktop API client tools.
 - **Python requests library:** For programmatic testing.
