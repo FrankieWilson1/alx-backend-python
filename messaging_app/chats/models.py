@@ -22,6 +22,8 @@ class User(AbstractUser):
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                                editable=False)
     email = models.EmailField(_("email address"), unique=True)
+    # password_hash is added to match the project's explicit requiremt.
+    password_hash = models.CharField(max_length=128, null=False, blank=False, default='placeholder_hash')
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     role = models.CharField(
         max_length=10,
@@ -43,7 +45,7 @@ class Conversation(models.Model):
     """
     Model to track conversation between users.
     """
-    conversations_id = models.UUIDField(primary_key=True, default=uuid.uuid4,
+    conversation_id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                                         editable=False)
     participants_id = models.ManyToManyField(settings.AUTH_USER_MODEL,
                                              related_name='converstations')
@@ -52,7 +54,7 @@ class Conversation(models.Model):
     def __str__(self):
         """String representation of the conversation class to the admin
         """
-        return f"Conversation {self.conversations_id}"
+        return f"Conversation {self.conversation_id}"
 
     class Meta:
         ordering = ['created_at']
