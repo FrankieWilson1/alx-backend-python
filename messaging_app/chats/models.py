@@ -3,7 +3,32 @@ import uuid
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
+from django.contrib.auth.models import BaseUserManager
 
+class CustomUserManager(BaseUserManager):
+    def create_user(self, email, password, **extra_fields):
+        if not email:
+            raise ValueError('The email field must be set')
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_active', True)
+        
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError(
+				'Superuser must be assigned to is_staff=True.'
+			)
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError(
+				'Superuser must be assigned to is_superuser=True.'
+			)
+        return self.create_user(email, password, **extra_fields)
 
 # -- User Models ---
 class User(AbstractUser):
@@ -33,6 +58,7 @@ class User(AbstractUser):
         blank=False
     )
     created_at = models.DateTimeField(auto_now_add=True)
+    objects = CustomUserManager()
     #   'email' to be used as a unique identifieer for authentication
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'phone_number', 'role']
@@ -48,7 +74,7 @@ class Conversation(models.Model):
     conversation_id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                                         editable=False)
     participants_id = models.ManyToManyField(settings.AUTH_USER_MODEL,
-                                             related_name='converstations')
+                                             related_name='conversations')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -82,8 +108,8 @@ class Message(models.Model):
     def __str__(self):
         """String representation of the message class to the admin
         """
-        sender_email = self.sender.email
-        conv_id = self.conversation.conversations_id
+        sender_email = self.sender.id
+        conv_id = self.conversation.conversation_id
         full_message_body = self.message_body
         if len(full_message_body) > 50:
             return (f"Msg from {sender_email} in {conv_id}: "
@@ -95,3 +121,29 @@ class Message(models.Model):
         ordering = ['sent_at']
         verbose_name = "Message"
         verbose_name_plural = "Messages"
+
+
+class CustomUserManager(BaseUserManager):
+    def create_user(self, email, password, **extra_fields):
+        if not email:
+            raise ValueError('The email field must be set')
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_active', True)
+        
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError(
+				'Superuser must be assigned to is_staff=True.'
+			)
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError(
+				'Superuser must be assigned to is_superuser=True.'
+			)
+        return self.create_user(email, password, **extra_fields)

@@ -3,12 +3,16 @@ from rest_framework import viewsets, viewsets, status, serializers
 from rest_framework.response import Response
 from .models import Conversation, User, Message
 from .serializers import ConversationSerializer, UserSerializer, MessageSerializer
+from .permissions import IsParticipant
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
 
 
 class ConversationViewSet(viewsets.ModelViewSet):
     """ A ViewSet for viewing and editing conversation instances"""
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
+    permission_classes = (IsParticipant, IsAuthenticated)
 
     def perform_create(self, serializer):
         """
@@ -64,4 +68,3 @@ class MessageViewSet(viewsets.ModelViewSet):
             )
 
         serializer.save(sender=self.request.user, conversation=conversation)
-        

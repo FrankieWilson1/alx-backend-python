@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # THIRD PARTY APPS
     'rest_framework',
+    'rest_framework_simplejwt',
     # CUSTOM APPS
     'chats',
 ]
@@ -130,9 +131,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         "rest_framework.permissions.IsAuthenticated",
     ]
+}
+
+SIMPLE_JWT = {
+	'USER_ID_FIELD': 'user_id',
 }
