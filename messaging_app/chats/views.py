@@ -1,15 +1,18 @@
 # from django.shortcuts import render
-from rest_framework import viewsets, viewsets, serializers
+from rest_framework import viewsets, serializers, status
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
+
 from .models import Conversation, User, Message
 from .serializers import ConversationSerializer, MessageSerializer
 from .permissions import IsParticipantOfConversation
-from rest_framework.permissions import IsAuthenticated
-from pip._vendor.requests.models import Response
-from pip._vendor.rich import status
+from .pagination import StandardResultsSetPagination
+from .filters import MessageFilter
 
 
 class ConversationViewSet(viewsets.ModelViewSet):
-    """ A ViewSet for viewing and editing conversation instances"""
+    """ A ViewSet for viewing and editing sconversation instances"""
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
     permission_classes = (IsAuthenticated, IsParticipantOfConversation,)
@@ -41,7 +44,11 @@ class MessageViewSet(viewsets.ModelViewSet):
     """A ViewSet for viewing and sending message instaces."""
     # queryset = Message.objects.all()
     serializer_class = MessageSerializer
-    permission_classes = (IsParticipantOfConversation,)
+    permission_classes = (IsAuthenticated, IsParticipantOfConversation,)
+    
+    pagination_class = StandardResultsSetPagination
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = MessageFilter
     
     def get_queryset(self):
         """
@@ -65,7 +72,7 @@ class MessageViewSet(viewsets.ModelViewSet):
                 {"conversation": "Conversation ID is required to send a message."}
             )
         try:
-            conversation = Conversation.objects.get(conversations_id=conversation_id)
+            conversation = Conversation.objects.get(conversation_id=conversation_id)
         except Conversation.DoesNotExist:
             raise serializers.ValidationError(
                 {"conversation": "Conversation with this ID does not exist."}
