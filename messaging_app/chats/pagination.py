@@ -3,9 +3,9 @@ from rest_framework.pagination import PageNumberPagination
 
 class StandardResultsSetPagination(PageNumberPagination):
     """
-    A class that set a default page size of 20 and allows
-    clients to request a different page size up to 100
-    using a page_size query parameter.
+    This custom pagination class sets the default page size for the resutl.
+    A common use-case for pagination is to display the total count of items,
+    which can be accessed via `page.paginator.count`.
     """
     page_size = 20
     page_size_query_param = 'page_size'
