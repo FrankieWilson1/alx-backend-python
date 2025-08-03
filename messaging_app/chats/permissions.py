@@ -15,4 +15,7 @@ class IsParticipantOfConversation(permissions.BasePermission):
         # Allow access only to participants in a conversation
         if request.method in permissions.SAFE_METHODS:
             return request.user in obj.participants_id.all()
-        return request.user in obj.all()
+
+        if request.method in ["PUT", "PATCH", "DELETE"]:
+            return request.user in obj.participants_id.all()
+        return False

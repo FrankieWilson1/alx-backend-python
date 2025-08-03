@@ -4,8 +4,8 @@ from .models import Conversation, User, Message
 from .serializers import ConversationSerializer, MessageSerializer
 from .permissions import IsParticipantOfConversation
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.decorators import permission_classes
-from django.core.exceptions import PermissionDenied
+from pip._vendor.requests.models import Response
+from pip._vendor.rich import status
 
 
 class ConversationViewSet(viewsets.ModelViewSet):
@@ -72,6 +72,8 @@ class MessageViewSet(viewsets.ModelViewSet):
             )
 
         if self.request.user not in conversation.participants_id.all():
-            raise PermissionDenied("You are not a participant of this conversation.")
+            return Response({"detail": "You are not a participant of this conversation."},
+                            status=status.HTTP_403_FORBIDDEN
+                            )
 
         serializer.save(sender=self.request.user, conversation=conversation)
