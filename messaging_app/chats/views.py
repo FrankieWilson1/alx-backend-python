@@ -1,10 +1,8 @@
 # from django.shortcuts import render
-from rest_framework import viewsets, viewsets, status, serializers
-from rest_framework.response import Response
+from rest_framework import viewsets, viewsets, serializers
 from .models import Conversation, User, Message
-from .serializers import ConversationSerializer, UserSerializer, MessageSerializer
-from .permissions import IsParticipant
-from rest_framework.permissions import IsAuthenticated
+from .serializers import ConversationSerializer, MessageSerializer
+from .permissions import IsParticipantOfConversation
 from rest_framework.decorators import permission_classes
 
 
@@ -12,7 +10,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
     """ A ViewSet for viewing and editing conversation instances"""
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
-    permission_classes = (IsParticipant, IsAuthenticated)
+    permission_classes = (IsParticipantOfConversation,)
 
     def perform_create(self, serializer):
         """
@@ -41,6 +39,7 @@ class MessageViewSet(viewsets.ModelViewSet):
     """A ViewSet for viewing and sending message instaces."""
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+    permission_classes = (IsParticipantOfConversation,)
 
     def perform_create(self, serializer):
         """
