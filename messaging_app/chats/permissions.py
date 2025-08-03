@@ -13,8 +13,6 @@ class IsParticipantOfConversation(permissions.BasePermission):
     
     def has_object_permission(self, request, view, obj):
         # Allow access only to participants in a conversation
-        if isinstance(obj, Conversation):
+        if request.method in permissions.SAFE_METHODS:
             return request.user in obj.participants_id.all()
-        elif isinstance(obj, Message):
-            return request.user in obj.conversation.participants_id.all()
-        return False
+        return request.user in obj.all()

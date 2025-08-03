@@ -3,14 +3,16 @@ from rest_framework import viewsets, viewsets, serializers
 from .models import Conversation, User, Message
 from .serializers import ConversationSerializer, MessageSerializer
 from .permissions import IsParticipantOfConversation
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import permission_classes
+from django.core.exceptions import PermissionDenied
 
 
 class ConversationViewSet(viewsets.ModelViewSet):
     """ A ViewSet for viewing and editing conversation instances"""
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
-    permission_classes = (IsParticipantOfConversation,)
+    permission_classes = (IsAuthenticated, IsParticipantOfConversation,)
 
     def perform_create(self, serializer):
         """
@@ -37,23 +39,26 @@ class ConversationViewSet(viewsets.ModelViewSet):
 
 class MessageViewSet(viewsets.ModelViewSet):
     """A ViewSet for viewing and sending message instaces."""
-    queryset = Message.objects.all()
+    # queryset = Message.objects.all()
     serializer_class = MessageSerializer
     permission_classes = (IsParticipantOfConversation,)
+    
+    def get_queryset(self):
+        """
+        Filters the messages to only show those belonging to a conversation
+        that the authenticated user is a participant in.
+        """
+        user_conversations = self.request.user.conversations.all()
+        queryset = Message.objects.filter(conversation__in=user_conversations)
+        return queryset
 
     def perform_create(self, serializer):
         """
         Overrides the default perform_create to set the sender
         (requesting user) and the conversation for a new message.
         """
-        # Ensures message is linked to the authenticated user as sender
-        # and to the spcified conversation.
-
-        # Get the conversation ID from the request data
-        # Assuming the client sends 'conversation' as a UUID string
         conversation_id = self.request.data.get('conversation')
 
-        # Adds participants to the conversation
         if not conversation_id:
             # raises error
             raise serializers.ValidationError(
@@ -65,5 +70,8 @@ class MessageViewSet(viewsets.ModelViewSet):
             raise serializers.ValidationError(
                 {"conversation": "Conversation with this ID does not exist."}
             )
+
+        if self.request.user not in conversation.participants_id.all():
+            raise PermissionDenied("You are not a participant of this conversation.")
 
         serializer.save(sender=self.request.user, conversation=conversation)
