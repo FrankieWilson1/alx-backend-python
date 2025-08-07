@@ -1,0 +1,478 @@
+2025-08-07 18:42:07.001742 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 19:05:10.855509 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 19:36:00.033584 -             User: AnonymousUser - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:36:08.504416 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 19:36:13.513277 -             User:                  (c4ab8491-06b6-4add-b0ed-b105813f9f20) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:36:42.170779 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 19:36:46.967313 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:08.971491 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:14.306598 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:18.009822 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:20.428303 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:22.332335 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:24.293451 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:26.524863 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:28.684589 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:30.458790 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:37:50.134122 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 19:38:38.375054 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 19:39:30.818115 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:39:40.083897 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:40:02.166131 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 19:40:28.402766 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:40:34.564589 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:40:50.351383 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:41:00.827718 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:41:06.591063 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:41:11.205793 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:41:15.354861 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 19:42:34.888784 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/login/
+2025-08-07 19:42:35.077656 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/
+2025-08-07 19:42:36.894363 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /favicon.ico
+2025-08-07 19:43:08.902626 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:08.967584 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:43:26.218244 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:26.311339 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:26.342319 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:43:32.365199 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:32.394180 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:43:40.492437 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:40.636655 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:40.670634 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:43:50.390046 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:50.458691 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:43:50.490670 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:44:00.971963 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:01.053009 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:01.084986 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:44:13.036947 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:13.101527 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:13.135505 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:44:23.324547 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:23.406643 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:23.443620 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:44:35.398380 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:35.502315 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:35.534294 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:44:48.054442 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:48.115681 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:44:48.146660 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:44:55.686455 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:44:55.731426 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:45:55.656512 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:45:55.689492 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:46:07.457962 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:46:07.574887 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:46:07.616863 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:46:20.938768 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:46:20.971748 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:46:36.924070 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:46:36.991031 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:46:37.028009 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:46:51.427847 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:46:51.518475 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:46:51.554453 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:47:04.999487 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:05.087433 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:05.124410 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:47:16.290230 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:16.371181 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:16.404160 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:47:28.210133 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:28.282094 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:28.318070 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:47:39.724250 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:39.804059 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:39.839037 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:47:52.255269 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:52.329300 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:47:52.365280 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:48:03.670434 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:48:03.740390 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:48:03.776368 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:48:09.720988 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:48:15.983808 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:48:16.018787 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:48:43.967925 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:48:44.000903 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:48:58.864955 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:48:58.942909 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:48:58.981884 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:49:15.529291 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:15.599446 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:15.635425 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:49:28.825806 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:28.898324 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:28.938300 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:49:41.763917 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:41.846866 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:41.889838 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:49:56.531115 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:56.596075 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:49:56.635049 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:50:11.148675 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:50:11.244615 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:50:11.277594 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:50:28.507980 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:50:28.659889 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:50:28.703865 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:50:46.193230 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/
+2025-08-07 19:50:48.905930 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:50:48.946903 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:52:37.162298 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:52:44.681471 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:52:44.731439 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:52:44.770417 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:52:48.980951 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:52:49.009935 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:52:51.773497 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:52:51.806477 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:53:08.324815 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:08.387241 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:08.424218 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:53:21.016297 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:21.083868 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:21.117846 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:53:37.133052 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:37.205260 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:37.242238 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:53:50.435202 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:50.535139 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:53:50.576112 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:54:04.714718 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:54:04.828640 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:54:04.874616 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:54:43.147984 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:54:44.921433 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:54:44.991390 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:54:45.078337 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:55:37.458193 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:55:37.496485 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:55:51.462620 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:55:51.566554 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:55:51.618818 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:55:58.289409 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:55:58.323386 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:09.685613 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:56:09.760499 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:56:09.806473 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:11.395429 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:56:11.472381 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:20.987996 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:56:21.070943 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:56:21.130907 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:23.817488 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:56:23.855463 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:35.190316 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:56:35.276265 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:56:35.338225 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:35.922863 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:56:36.016804 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:37.882088 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:56:48.444218 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:56:48.481197 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:56:55.097069 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:56:55.127048 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 19:57:05.475685 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 19:57:05.565628 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 19:57:05.613598 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:06:56.855348 -             User: AnonymousUser - Path: /api/v1/conversations/
+2025-08-07 20:07:04.703826 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 20:07:09.250459 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 20:07:21.743408 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:07:33.416729 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:07:48.294443 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:08:07.256188 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:08:07.297164 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:08:12.589731 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:08:12.628707 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:08:29.142670 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:08:29.232615 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:08:29.277588 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:08:35.853894 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:08:35.887871 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:08:46.964319 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:08:47.051270 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:08:47.094777 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:08:52.496379 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:08:52.531355 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:01.007443 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:01.155346 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:09:01.200319 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:06.514628 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:06.557601 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:17.647991 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:17.772913 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:09:17.840873 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:34.615561 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:34.655537 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:42.348834 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:42.457712 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:09:42.506127 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:45.150942 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:45.193913 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:53.341977 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:53.438574 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:09:53.483879 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:09:55.226969 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:09:55.279934 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:10:02.781374 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:10:02.911287 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:10:02.977246 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:10:04.911738 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:10:04.957709 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:10:11.105898 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:10:11.223314 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:10:11.268286 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:10:13.496695 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:10:13.534671 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:10:20.420182 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:10:20.533970 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:10:20.588051 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:10:52.397310 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:10:56.280436 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:10:56.356387 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:10:57.444628 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:03.020457 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:03.077421 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:10.008429 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:10.106355 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:11:10.155325 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:13.222668 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:13.260644 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:19.526656 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:19.592625 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:11:19.644594 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:21.593374 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:21.630351 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:28.379429 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:28.462382 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:11:28.504853 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:30.431074 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:30.486042 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:38.813677 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:38.906623 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:11:38.954592 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:41.099711 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:41.139685 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:47.231674 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:47.262658 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:50.302906 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:50.391957 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:11:50.424957 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:52.876610 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:52.918586 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:11:59.212467 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:11:59.298423 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:11:59.342730 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:12:01.785519 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:12:01.829492 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:12:08.058706 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/add/
+2025-08-07 20:12:08.168637 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:12:08.226639 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:13:15.572728 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 20:13:27.765534 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:13:39.642650 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 20:13:45.675318 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:14:25.043196 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:14:33.542233 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:15:25.062451 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/f1b7125f-bdb7-42b6-935b-9c07baac84bf/messages/
+2025-08-07 20:15:44.824767 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 20:16:17.535167 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:16:47.680113 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:17:04.478656 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 20:17:34.736974 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:21:53.063240 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 20:23:46.181620 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 20:24:20.916564 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 20:24:41.315861 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 20:26:41.423732 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:26:43.430379 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:26:45.057802 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:26:46.642392 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:26:48.046464 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:26:49.325803 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:26:50.866261 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 20:27:05.689790 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/1a35b518-4af1-48ea-ac92-8b11317dc922/messages/
+2025-08-07 20:27:35.518419 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:27:35.567387 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:28:22.523764 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/4938cdaf-9921-4db9-855b-9371998c53cd/messages/
+2025-08-07 20:28:34.482094 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/
+2025-08-07 20:28:36.706373 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:28:36.741350 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:02.237910 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:02.270888 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:15.517573 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:15.613511 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:15.652486 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:18.810699 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:18.918632 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:18.967602 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:26.356495 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:30.443172 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:29:30.475152 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:32.651392 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:29:32.680375 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:45.126282 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:29:47.945226 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:29:48.033168 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:29:48.068144 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:50.637749 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:50.676726 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:53.580197 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:53.682133 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:29:53.718110 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:29:58.377468 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:01.751061 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:01.782041 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:30:13.282078 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:18.104873 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:18.264848 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:18.440824 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:30:25.644471 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:25.684462 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:30:27.584516 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:30:27.680503 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:30:30.484207 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:30.524201 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:30:32.816419 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/add/
+2025-08-07 20:30:32.873049 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:30:47.507813 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/add/
+2025-08-07 20:30:47.692088 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:30:47.756079 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:31:29.483115 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 20:32:03.880225 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:32:18.346836 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:32:18.386827 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:32:25.396674 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:32:25.436667 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:32:29.482056 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:32:29.522051 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:32:33.597841 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:32:33.653834 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:32:53.824090 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:32:57.381655 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/conversation/
+2025-08-07 20:32:57.421648 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:33:03.322603 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/message/
+2025-08-07 20:33:03.370595 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 20:33:09.038343 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:34:17.476147 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:34:21.839216 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:34:23.675900 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:34:25.288996 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:34:26.829550 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:57:30.754034 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 20:57:52.772685 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 20:58:29.191539 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/8409dee9-26b7-4ff1-8801-9596d4b68645/messages/
+2025-08-07 21:25:14.190865 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/
+2025-08-07 21:25:32.669036 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/auth/group/add/
+2025-08-07 21:25:32.722002 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:26:00.378129 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/auth/group/add/
+2025-08-07 21:26:00.479067 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/auth/group/
+2025-08-07 21:26:00.534033 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:26:13.937230 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/auth/group/add/
+2025-08-07 21:26:13.972210 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:26:28.928816 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/auth/group/add/
+2025-08-07 21:26:29.007157 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/auth/group/
+2025-08-07 21:26:29.049130 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:26:42.278807 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:26:42.323778 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:26:47.842811 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/0057d1da-3c29-477a-9700-da652764f8d8/change/
+2025-08-07 21:26:47.879787 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:27:04.841059 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/0057d1da-3c29-477a-9700-da652764f8d8/change/
+2025-08-07 21:27:04.881033 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:27:54.325258 -             User:                  (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/0057d1da-3c29-477a-9700-da652764f8d8/change/
+2025-08-07 21:27:54.468554 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:27:54.527516 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:27:57.047759 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/0057d1da-3c29-477a-9700-da652764f8d8/change/
+2025-08-07 21:27:57.085735 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:28:00.618855 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:28:03.250205 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/171bc771-14da-4929-8d4a-f00cd5d2d13c/change/
+2025-08-07 21:28:03.293177 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:28:29.902281 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/171bc771-14da-4929-8d4a-f00cd5d2d13c/change/
+2025-08-07 21:28:30.034199 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:28:30.103158 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:29:15.073342 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:29:31.286972 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 21:29:52.206532 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/5d920495-6f8e-4c38-bb7a-fe571b8b6027/change/
+2025-08-07 21:29:52.244507 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:30:14.660425 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:30:20.906377 -             User:                  (5d920495-6f8e-4c38-bb7a-fe571b8b6027) - Path: /api/v1/conversations/
+2025-08-07 21:31:11.244865 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:31:15.080759 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /api/v1/conversations/
+2025-08-07 21:31:34.832564 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:31:40.690510 -             User: wizy                salem (171bc771-14da-4929-8d4a-f00cd5d2d13c) - Path: /api/v1/conversations/
+2025-08-07 21:31:46.697050 -             User: wizy                salem (171bc771-14da-4929-8d4a-f00cd5d2d13c) - Path: /api/v1/conversations/
+2025-08-07 21:32:00.683211 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:32:00.725184 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:32:02.896138 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/c4ab8491-06b6-4add-b0ed-b105813f9f20/change/
+2025-08-07 21:32:02.933114 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:32:18.734456 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:32:25.617318 -             User:                  (c4ab8491-06b6-4add-b0ed-b105813f9f20) - Path: /api/v1/conversations/
+2025-08-07 21:33:36.422030 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/c4ab8491-06b6-4add-b0ed-b105813f9f20/change/
+2025-08-07 21:33:36.554718 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:33:36.620676 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:33:42.704496 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:33:47.518716 -             User: test                test2 (c4ab8491-06b6-4add-b0ed-b105813f9f20) - Path: /api/v1/conversations/
+2025-08-07 21:33:49.869127 -             User: test                test2 (c4ab8491-06b6-4add-b0ed-b105813f9f20) - Path: /api/v1/conversations/
+2025-08-07 21:33:53.916217 -             User: test                test2 (c4ab8491-06b6-4add-b0ed-b105813f9f20) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/
+2025-08-07 21:33:59.700413 -             User: test                test2 (c4ab8491-06b6-4add-b0ed-b105813f9f20) - Path: /api/v1/conversations/
+2025-08-07 21:34:07.753423 -             User: test                test2 (c4ab8491-06b6-4add-b0ed-b105813f9f20) - Path: /api/v1/conversations/
+2025-08-07 21:35:28.620413 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:36:19.368331 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:36:39.554209 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:38:22.025908 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:38:55.638422 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:41:38.040252 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:43:12.876264 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:43:12.935913 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:43:18.992751 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/171bc771-14da-4929-8d4a-f00cd5d2d13c/change/
+2025-08-07 21:43:19.034726 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:43:34.204718 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:43:37.372284 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/0057d1da-3c29-477a-9700-da652764f8d8/change/
+2025-08-07 21:43:37.409263 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:44:08.657044 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:49:08.821709 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:53:00.810025 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:53:00.861991 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:53:15.249280 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/0057d1da-3c29-477a-9700-da652764f8d8/change/
+2025-08-07 21:53:15.293250 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:53:35.689702 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/0057d1da-3c29-477a-9700-da652764f8d8/change/
+2025-08-07 21:53:35.817535 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:53:35.878498 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/jsi18n/
+2025-08-07 21:54:14.271604 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:55:32.607283 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:55:37.660068 -             User: frankie                wilson (0057d1da-3c29-477a-9700-da652764f8d8) - Path: /admin/chats/user/
+2025-08-07 21:55:37.674159 -             User: AnonymousUser - Path: /admin/chats/user/
+2025-08-07 21:55:37.745115 -             User: AnonymousUser - Path: /admin/login/
+2025-08-07 21:56:55.695347 -             User: AnonymousUser - Path: /admin/login/
+2025-08-07 21:57:12.571790 -             User: AnonymousUser - Path: /admin/login/
+2025-08-07 21:57:16.938583 -             User: AnonymousUser - Path: /admin/login/
+2025-08-07 21:57:38.044603 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/login/
+2025-08-07 21:57:38.233740 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/
+2025-08-07 21:57:38.269719 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-07 21:58:09.182282 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 21:58:58.974543 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/6a531a95-a49d-4047-acfa-168272642a94/change/
+2025-08-07 21:58:59.009519 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-07 21:59:13.018438 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/6a531a95-a49d-4047-acfa-168272642a94/change/
+2025-08-07 21:59:13.052416 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-07 22:00:46.880044 -             User:                  (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/6a531a95-a49d-4047-acfa-168272642a94/change/
+2025-08-07 22:00:46.984978 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/
+2025-08-07 22:00:47.035948 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-07 22:00:59.395584 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 22:03:10.309686 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/
+2025-08-07 22:03:10.349660 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-07 22:03:26.751692 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 22:03:32.853504 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /api/v1/conversations/
+2025-08-07 22:04:10.084195 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /api/v1/conversations/7a1a9bd6-c010-4545-a2f3-4803dfac9bc2/messages/
+2025-08-07 22:04:16.512546 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /api/v1/conversations/
+2025-08-07 22:06:56.107763 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 22:07:12.918340 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/6a531a95-a49d-4047-acfa-168272642a94/change/
+2025-08-07 22:07:12.971304 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-07 22:07:34.470176 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/6a531a95-a49d-4047-acfa-168272642a94/change/
+2025-08-07 22:07:34.566729 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/
+2025-08-07 22:07:34.613431 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-07 22:07:46.047807 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 22:10:15.243268 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 22:12:30.560188 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-07 22:19:14.549743 -             User: AnonymousUser - Path: /api/v1/token/
