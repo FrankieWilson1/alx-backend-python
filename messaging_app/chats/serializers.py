@@ -4,7 +4,7 @@ from .models import User, Conversation, Message
 
 
 class UserSerializer(serializers.ModelSerializer):
-    """A user serilizer modeling a user and it's field"""
+    """A user serializer modeling a user and it's field"""
     class Meta:
         model = User
         fields = [
@@ -20,9 +20,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 class MessageSerializer(serializers.ModelSerializer):
     """
-    A message serilizer modeling Message model
+    A message serializer modeling Message model
     Attribute:
-        sender (UserSerilizer): The UserSerilizer class
+        sender (Userserializer): The Userserializer class
     """
     sender = UserSerializer(read_only=True)
 
@@ -30,7 +30,6 @@ class MessageSerializer(serializers.ModelSerializer):
         model = Message
         fields = [
             'message_id',
-            'conversation',
             'sender',
             'sent_at',
             'message_body'
@@ -39,11 +38,11 @@ class MessageSerializer(serializers.ModelSerializer):
 
 class ConversationSerializer(serializers.ModelSerializer):
     """
-    A Conversation serilizer modeling conversation model
+    A Conversation serializer modeling conversation model
 
     Attributes:
-        participants (UserSerilizer): The User serilizer class
-        message_set (MessageSerilizer): The message serilizer class
+        participants (Userserializer): The User serializer class
+        message_set (Messageserializer): The message serializer class
     """
     participants = UserSerializer(read_only=True, many=True)
     message_set = MessageSerializer(read_only=True, many=True)
@@ -56,3 +55,11 @@ class ConversationSerializer(serializers.ModelSerializer):
             'conversation_id',
             'created_at'
         ]
+
+    def create(self, validate_data):
+        participants_data = self.context['request'].data.get('participants')
+        conversation = Conversation.objects.create()
+        for user_id in participants_data:
+            user = User.objects.get(user_id=user_id)
+            conversation.participants.add(user)
+        return conversation

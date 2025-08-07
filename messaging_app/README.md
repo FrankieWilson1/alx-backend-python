@@ -1,131 +1,92 @@
-# Messaging App
+# Messaging App API
 
-This project is a **RESTful API** built with **Django** and **Django REST Framework**, designed to serve as the backend for a messaging application. It demonstrates the complete lifecycle of API development, from project scaffolding and model definition to API routing and documentation.
+This project is a backend API for a messaging application, built with Django and Django REST Framework. It provides endpoints for user authentication, conversation management, and message sending.
 
-## Project Objectives
+## Features
 
-The primary objectives of this project were to:
+- **User Authentication:** Secure access to the API using JSON Web Tokens (JWT).
+- **Conversations:**
+    - Create conversations with a list of participants.
+    - Fetch a list of conversations for the authenticated user.
+    - Only participants can access a conversation's details.
+- **Messages:**
+    - Send messages to specific conversations.
+    - Fetch all messages within a conversation.
+    - Pagination is implemented to limit messages to 20 per page.
+    - Filtering is available to retrieve messages by sender or within a specific date range.
+- **Permissions:** Custom permissions ensure that only authenticated participants can view conversations and messages.
 
-- Scaffold a Django project using industry-standard structures.
-- Identify, define, and implement scalable data models using Django’s ORM.
-- Establish one-to-many, many-to-many, and one-to-one relationships between models.
-- Create clean and modular Django apps.
-- Set up and configure URL routing for APIs using Django’s `path` and `include` functions.
-- Follow best practices in file structure, code organization, and documentation.
+## Technologies Used
 
-## Key Features
+- **Python 3**
+- **Django:** Web framework
+- **Django REST Framework (DRF):** Toolkit for building REST APIs
+- **djangorestframework-simplejwt:** For JWT-based authentication
+- **django-filter:** For powerful filtering capabilities
+- **PostgreSQL:** As the database backend
 
-- **User Management**: Create, list, and manage users.
-- **Conversation Management**: Start new conversations and retrieve conversations for an authenticated user.
-- **Messaging**: Send new messages to an existing conversation and list messages within a specific conversation.
+## Setup and Installation
 
-## Getting Started
+Follow these steps to get the project running on your local machine.
 
-### 1. Project Setup
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/FrankieWilson1/alx-backend-python.git
+    cd alx-backend-python/messaging_app
+    ```
 
-To get the project running locally, follow these steps:
+2.  **Create and activate a virtual environment:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
-**a. Clone the repository:**
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```bash
-git clone https://github.com/alx-backend-python/messaging_app.git
-cd messaging_app
-```
+4.  **Database setup:**
+    - Ensure your PostgreSQL database is running.
+    - Create a database for the project and configure your `DATABASES` settings in `messaging_app/settings.py`.
 
-**b. Create and activate a virtual environment:**
+5.  **Run migrations and create a superuser:**
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py createsuperuser
+    ```
 
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-**c. Install dependencies:**
-
-```bash
-pip install -r requirements.txt
-pip install django djangorestframework djangorestframework-nested
-```
-
-### 2. Database Setup
-
-Apply the database migrations to create the necessary tables for your models.
-
-```bash
-python manage.py makemigrations chats
-python manage.py migrate
-```
-
-### 3. Create a Superuser
-
-Create an admin user to access the Django admin panel and manage your data.
-
-```bash
-python manage.py createsuperuser
-```
-
-### 4. Run the Development Server
-
-Start the server and access your API.
-
-```bash
-python manage.py runserver
-```
-
-The API will be available at [http://127.0.0.1:8000/api/v1/](http://127.0.0.1:8000/api/v1/).
+6.  **Run the development server:**
+    ```bash
+    python manage.py runserver
+    ```
+    The API will be available at `http://127.0.0.1:8000/`.
 
 ## API Endpoints
 
-The API endpoints are documented in the `chats/README.md` file.
+A comprehensive Postman collection is included to test all endpoints.
 
-### Chat Application API
+| Method | URL                                                    | Description                                                                 |
+|--------|--------------------------------------------------------|-----------------------------------------------------------------------------|
+| `POST` | `/api/v1/token/`                                       | Obtain an access and refresh token with a username and password.            |
+| `POST` | `/api/v1/conversations/`                               | Create a new conversation with a list of user IDs.                          |
+| `GET`  | `/api/v1/conversations/`                               | List all conversations the authenticated user is a participant of.          |
+| `POST` | `/api/v1/conversations/{id}/messages/`                 | Send a new message to a specific conversation.                              |
+| `GET`  | `/api/v1/conversations/{id}/messages/`                 | List messages in a specific conversation (paginated by 20).                 |
+| `GET`  | `/api/v1/conversations/{id}/messages/?sender={uuid}`   | Filter messages by a specific sender.                                       |
+| `GET`  | `/api/v1/conversations/{id}/messages/?sent_at_after...`| Filter messages within a date/time range.                                   |
 
-The chats application is a Django app that provides the core messaging functionality for the messaging_app project. It contains the data models for users, conversations, and messages, as well as a full RESTful API for managing them.
+## Testing
 
-### Models
+A Postman collection with pre-configured requests is available to test the API.
 
-This app uses three main models to manage messaging data:
+- **File:** `post_man-Collections.postman_collection.json`
+- **Steps:**
+    1.  Import the collection into Postman.
+    2.  Use the `Get JWT Token` request to authenticate.
+    3.  Save the `access` token to an environment variable and use it for all subsequent requests.
 
-| Model        | Description                                                                                     |
-|--------------|-------------------------------------------------------------------------------------------------|
-| User         | Extends Django's AbstractUser to include additional fields like role and phone_number.        |
-| Conversation | Represents a chat conversation between two or more users. It has a ManyToManyField to User for participants. |
-| Message      | Represents a single message sent within a conversation. It has a ForeignKey to User for the sender and a ForeignKey to Conversation. |
+## Author
 
-### API Endpoints
-
-The following API endpoints are available, automatically generated by Django REST Framework's routers:
-
-| URL                                         | HTTP Method | Description                                                            |
-|---------------------------------------------|-------------|------------------------------------------------------------------------|
-| /api/v1/users/                             | GET, POST   | List all users or create a new user.                                  |
-| /api/v1/users/{pk}/                        | GET         | Retrieve, update, or delete a specific user.                          |
-| /api/v1/conversations/                     | GET, POST   | List all conversations the authenticated user is a part of, or start a new conversation. |
-| /api/v1/conversations/{pk}/                | GET         | Retrieve a specific conversation.                                      |
-| /api/v1/conversations/{pk}/messages/       | GET, POST   | List all messages in a specific conversation or send a new message.   |
-| /api/v1/conversations/{pk}/messages/{mpk}/ | GET         | Retrieve a specific message within a conversation.                    |
-
-### Usage
-
-To interact with the API, you must first have a user account. You can create one via the admin panel or a registration endpoint (if available).
-
-**List all users**
-
-```bash
-curl -X GET "http://127.0.0.1:8000/api/v1/users/"
-```
-
-**List all conversations for the authenticated user**
-
-```bash
-# Note: Requires authentication
-curl -X GET "http://127.0.0.1:8000/api/v1/conversations/"
-```
-
-**Create a new message**
-
-```bash
-# Note: Replace {conversation_id} with the ID of the conversation
-# The sender is automatically set to the authenticated user.
-curl -X POST "http://127.0.0.1:8000/api/v1/conversations/{conversation_id}/messages/" \
--H "Content-Type: application/json" \
--d '{ "message_body": "Hello, world!" }'
+- **Frank Williams Ugwu**

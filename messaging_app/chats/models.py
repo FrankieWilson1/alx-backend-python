@@ -76,7 +76,7 @@ class Message(models.Model):
         sender (ForeignKey): A foreign key to user model
         conversation (ForeignKey): A foreign key to conversation model
         message_body (Text): A text field for messages
-        sent_at (DAteTime): The timestamp when the message was created.
+        sent_at (DateTime): The timestamp when the message was created.
     """
     message_id = models.UUIDField(
         primary_key=True,

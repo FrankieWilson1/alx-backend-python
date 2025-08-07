@@ -1,12 +1,15 @@
 from rest_framework import viewsets
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
+from .permissions import IsParticipantOfConversation
 from .models import User, Message, Conversation
 from .serializers import (
     UserSerializer,
     ConversationSerializer,
     MessageSerializer
 )
+from .filters import MessageFilter
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -23,7 +26,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
     """
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsParticipantOfConversation]
 
     def get_queryset(self):
         user = self.request.user
@@ -41,10 +44,25 @@ class MessageViewSet(viewsets.ModelViewSet):
             whether a user has access to the view set.
     """
     serializer_class = MessageSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsParticipantOfConversation]
+    filterset_class = MessageFilter
 
     def get_queryset(self):
         conversation_id = self.kwargs['conversation_pk']
+        user = self.request.user
+
+        try:
+            conversation = Conversation.objects.get(pk=conversation_id)
+        except Conversation.DoesNotExist:
+            raise PermissionDenied("Conversation does not exist.")
+
+        if not conversation.participants.filter(
+            user_id=user.user_id
+        ).exists():
+            raise PermissionDenied(
+                "You are not a participant in this conversation."
+            )
+
         return Message.objects.filter(conversation__pk=conversation_id)
 
     def perform_create(self, serializer):
