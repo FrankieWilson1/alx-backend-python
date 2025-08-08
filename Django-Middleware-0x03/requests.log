@@ -476,3 +476,20 @@
 2025-08-07 22:10:15.243268 -             User: AnonymousUser - Path: /api/v1/token/
 2025-08-07 22:12:30.560188 -             User: AnonymousUser - Path: /api/v1/token/
 2025-08-07 22:19:14.549743 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-08 16:56:48.473309 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-08 17:20:03.503534 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-08 17:20:09.274248 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /api/v1/conversations/
+2025-08-08 17:20:30.078205 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/
+2025-08-08 17:20:30.174193 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-08 17:20:32.887728 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/add/
+2025-08-08 17:20:32.951719 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-08 17:20:58.285545 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/add/
+2025-08-08 17:20:58.485514 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/chats/user/59290575-0091-4754-a562-8afc53e8bf9a/change/
+2025-08-08 17:20:58.541504 -             User: frankei                wilson (6a531a95-a49d-4047-acfa-168272642a94) - Path: /admin/jsi18n/
+2025-08-08 17:21:28.416363 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-08 17:21:39.693266 -             User:                  (59290575-0091-4754-a562-8afc53e8bf9a) - Path: /api/v1/conversations/
+2025-08-08 17:21:50.043244 -             User:                  (59290575-0091-4754-a562-8afc53e8bf9a) - Path: /api/v1/conversations/
+2025-08-08 17:22:00.376070 -             User: AnonymousUser - Path: /api/v1/token/
+2025-08-08 17:22:05.880207 -             User:                  (59290575-0091-4754-a562-8afc53e8bf9a) - Path: /api/v1/conversations/
+2025-08-08 17:22:17.452274 -             User:                  (59290575-0091-4754-a562-8afc53e8bf9a) - Path: /api/v1/conversations/
+2025-08-08 17:22:22.472774 -             User:                  (59290575-0091-4754-a562-8afc53e8bf9a) - Path: /api/v1/conversations/2d44a920-d4ca-4d57-bca7-a95d8c0698ee/messages/

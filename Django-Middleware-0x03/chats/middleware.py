@@ -135,26 +135,37 @@ class OffensiveLanguageMiddleware:
         return response
 
 
-class RolepermissionMiddleware:
-    def __init__(self, get_response):
-        self.get_response = get_response
+# class RolepermissionMiddleware:
+#     """
+#     A class middleware that checks if a user is both authentication and a member
+#     of the 'admin' or 'moderator' group before allowing access to a specific
+#     user.
+#     """
+#     def __init__(self, get_response):
+#         self.get_response = get_response
 
-    def __call__(self, request):
-        required_roles = ['admin', 'moderator']
-        protected_path_prefix = '/api/v1/conversations/'
+#     def __call__(self, request):
+#         required_roles = ['admin', 'moderator']
+#         protected_path_prefix = '/api/v1/conversations/'
 
-        if request.path.startswith(protected_path_prefix):
-            user = request.user
-            
-            # Add this line to debug the user object
-            print(f"DEBUG: User is '{user}' and is_authenticated is '{user.is_authenticated}'")
+#         # Checks if the user is trying to access a protected path.
+#         if request.path.startswith(protected_path_prefix):
+#             user = request.user
 
-            if user.is_authenticated:
-                user_roles = [group.name for group in user.groups.all()]
-                if not any(role in user_roles for role in required_roles):
-                    return HttpResponseForbidden("You do not have the required permissions to access this resource.")
-            else:
-                return HttpResponseForbidden("You must be logged in to access this resource.")
+#             # Checks for user authentication
+#             if user.is_authenticated:
+#                 # Checks if user belongs to any of the required roles
+#                 user_roles = [group.name for group in user.groups.all()]
+#                 if not any(role in user_roles for role in required_roles):
+#                     # User is not in an authorized role: deny access
+#                     return HttpResponseForbidden(
+#                         "You do not have the required permissions to access this resource."
+#                     )
+#             else:
+#                 # User is not authenticated: deny access
+#                 return HttpResponseForbidden(
+#                     "You must be logged in to access this resource."
+#                 )
 
-        response = self.get_response(request)
-        return response
+#         response = self.get_response(request)
+#         return response

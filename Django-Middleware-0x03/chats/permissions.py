@@ -22,3 +22,18 @@ class IsParticipantOfConversation(permissions.BasePermission):
                     ).exists()
 
         return obj.sender == request.user
+
+
+class IsAdminOrModerator(permissions.BasePermission):
+    """
+    Custom permission to only allow admins and moderator to perform certain
+    action
+    """
+    def has_permission(self, request, view):
+        user = request.user
+
+        if user and user.is_authenticated:
+            user_roles = [group.name for group in user.groups.all()]
+            return any(role in user_roles for role in ['admin', 'moderator'])
+
+        return False

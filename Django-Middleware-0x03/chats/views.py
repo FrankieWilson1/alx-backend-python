@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
-from .permissions import IsParticipantOfConversation
+from .permissions import IsParticipantOfConversation, IsAdminOrModerator
 from .models import User, Message, Conversation
 from .serializers import (
     UserSerializer,
@@ -26,7 +26,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
     """
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
-    permission_classes = [IsParticipantOfConversation]
+    permission_classes = [IsParticipantOfConversation | IsAdminOrModerator]
 
     def get_queryset(self):
         user = self.request.user
@@ -44,7 +44,7 @@ class MessageViewSet(viewsets.ModelViewSet):
             whether a user has access to the view set.
     """
     serializer_class = MessageSerializer
-    permission_classes = [IsParticipantOfConversation]
+    permission_classes = [IsParticipantOfConversation | IsAdminOrModerator]
     filterset_class = MessageFilter
 
     def get_queryset(self):
