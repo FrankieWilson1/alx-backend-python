@@ -49,7 +49,7 @@ class Message(models.Model):
         related_name='received_messages',
         on_delete=models.CASCADE
     )
-    message_body = models.TextField(null=False)
+    content = models.TextField(null=False)
     sent_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
