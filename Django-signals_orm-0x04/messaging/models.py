@@ -31,7 +31,8 @@ class Message(models.Model):
     Attributes:
         message_id (UUID): Unique identifier for message
         sender (ForeignKey): A foreign key to user model
-        message_body (Text): A text field for messages
+        content (Text): A text field for messages
+        edited (Boolean): indicates if a message has been edited or not
         sent_at (DateTime): The timestamp when the message was created.
     """
     message_id = models.UUIDField(
@@ -50,6 +51,7 @@ class Message(models.Model):
         on_delete=models.CASCADE
     )
     content = models.TextField(null=False)
+    edited = models.BooleanField(default=False)
     sent_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -81,3 +83,24 @@ class Notification(models.Model):
     def __str__(self):
         return f"Notification for {self.user.first_name} about message\
             {self.message.pk}"
+
+
+class MessageHistory(models.Model):
+    """
+    A class model that stores the old content of a message before it's updated
+    """
+    history_id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    message = models.ForeignKey(
+        Message,
+        on_delete=models.CASCADE,
+        related_name='history'
+        )
+    old_content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"History of message {self.message.pk} at {self.created_at}"
