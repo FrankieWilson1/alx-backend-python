@@ -12,7 +12,7 @@ User = get_user_model()
 
 @login_required
 def inbox(request):
-    unread_messages = Message.unread_messages.by_user(
+    unread_messages = Message.unread.unread_messages.by_user(
         request.user
     )
 
