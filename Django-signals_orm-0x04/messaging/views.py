@@ -1,10 +1,13 @@
+# messaging/views.py
+
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse
-from django.db.models import Q
 from django.contrib.auth import get_user_model
 
 from .models import Message
+
+User = get_user_model()
 
 
 @login_required
@@ -12,7 +15,7 @@ def send_message(request: HttpRequest) -> HttpResponse:
     """
     A view to handle sending a new message.
     """
-    if request.method: == 'POST':
+    if request.method == 'POST':
         receiver_id = request.POST.get('receiver')
         content = request.POST.get('content')
         parent_message_id = request.POST.get('parent_message')
@@ -34,12 +37,18 @@ def message_detail(request, message_id):
     """
     Retrieves a message and its direct replies in an optimized way
     """
-    threaded_messages = Message.objects.get_threaded_messages(
-        message_id
+    message = get_object_or_404(
+        Message.objects.filter(message_id=message_id).select_related(
+            'sender',
+            'receiver'
+        ).prefetch_related(
+            'replies'
+        ),
+        message_id=message_id
     )
 
     context = {
-        'threaded_messages': threaded_messages,
+        'message': message,
     }
 
     return render(request, 'message_detail.html', context)
