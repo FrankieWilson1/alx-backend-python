@@ -50,8 +50,15 @@ class Message(models.Model):
         related_name='received_messages',
         on_delete=models.CASCADE
     )
+    edited_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='edited_by',
+        on_delete=models.CASCADE,
+        null=True
+    )
     content = models.TextField(null=False)
     edited = models.BooleanField(default=False)
+    edited_at = models.DateTimeField(auto_now=True)
     sent_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
