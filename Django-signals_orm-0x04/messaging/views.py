@@ -2,6 +2,7 @@
 
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import cache_page
 from django.http import HttpRequest, HttpResponse
 from django.contrib.auth import get_user_model
 
@@ -50,6 +51,7 @@ def send_message(request: HttpRequest) -> HttpResponse:
     return redirect('home')
 
 @login_required
+@cache_page(60)
 def message_detail(request, message_id):
     """
     Retrieves a message and its direct replies in an optimized way
