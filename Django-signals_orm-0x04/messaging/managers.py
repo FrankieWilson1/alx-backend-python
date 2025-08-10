@@ -6,12 +6,4 @@ User = get_user_model
 
 class UnreadMessagesManager(models.Manager):
     def unread_for_user(self, user: User) -> QuerySet:
-        return self.filter(
-            receiver=user,
-            read=False
-        ).only(
-            'message_id',
-            'sender',
-            'content',
-            'sent_at'
-        )
+        return self.filter(receiver=user, read=False)

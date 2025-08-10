@@ -12,8 +12,13 @@ User = get_user_model()
 
 @login_required
 def inbox(request):
-    unread_messages = Message.unread.unread_messages.by_user(
+    unread_messages = Message.unread.unread_for_user(
         request.user
+    ).only(
+        'message_id',
+        'sender_id',
+        'content',
+        'sent_at'
     )
 
     context = {
