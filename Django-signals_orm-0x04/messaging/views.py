@@ -11,6 +11,18 @@ User = get_user_model()
 
 
 @login_required
+def inbox(request):
+    unread_messages = Message.unread_messages.by_user(
+        request.user
+    )
+
+    context = {
+        'unread_messages': unread_messages,
+    }
+
+    return render(request, 'inbox.html', context)
+
+@login_required
 def send_message(request: HttpRequest) -> HttpResponse:
     """
     A view to handle sending a new message.

@@ -4,6 +4,7 @@ import uuid
 from django.conf import settings
 from django.db.models import F
 
+from .managers import UnreadMessagesManager
 
 class User(AbstractUser):
     """
@@ -118,6 +119,8 @@ class Message(models.Model):
     edited_at = models.DateTimeField(auto_now=True)
     sent_at = models.DateTimeField(auto_now_add=True)
     objects = MessageManager()
+    read = models.BooleanField(default=False)
+    unread_messages = UnreadMessagesManager()
 
     def __str__(self):
         return f"Message from {self.sender.username} at {self.sent_at}"
