@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 import uuid
 from django.conf import settings
+from django.db.models import F
 
 
 class User(AbstractUser):
@@ -22,6 +23,55 @@ class User(AbstractUser):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+
+class MessageManager(models.Manager):
+    """
+    Implement a recursive query
+    """
+    def get_threaded_messages(self, message_id):
+
+        root_message = self.filter(
+            message_id=message_id
+        ).first()
+
+        if not root_message:
+            return []
+
+        all_messages = self.filter(
+            models.Q(
+                parent_message=root_message
+            ) | models.Q(
+                parent_message__parent_message=root_message
+            )
+        ).select_related(
+            'sender',
+            'receiver'
+        ).prefetch_related(
+            'replies'
+        ).order_by('sent_at')
+
+        # Combine the root message and replies into a single list
+        messages = [root_message] + list(all_messages)
+
+        # Build a nested dictionary or list to represent the thread in python
+        threaded_messages = {}
+        for msg in messages:
+            threaded_messages[msg.message_id] = {
+                'message': msg,
+                'replies': []
+            }
+
+        # Build the thread by linking replies to their parents.
+        for msg in messages:
+            if msg.parent_message_id in threaded_messages:
+                threaded_messages[msg.parent_message_id]['replies'].append(
+                    threaded_messages[msg.message_id]
+                )
+
+        # Return the root of the conversation tree
+        return threaded_messages.get(root_message.message_id)
 
 
 class Message(models.Model):
@@ -56,10 +106,18 @@ class Message(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
+    parent_message = models.ForeignKey(
+        'self',
+        on_delete=models.SET_NULL,
+        related_name='replies',
+        null=True,
+        blank=True
+    )
     content = models.TextField(null=False)
     edited = models.BooleanField(default=False)
     edited_at = models.DateTimeField(auto_now=True)
     sent_at = models.DateTimeField(auto_now_add=True)
+    objects = MessageManager()
 
     def __str__(self):
         return f"Message from {self.sender.username} at {self.sent_at}"

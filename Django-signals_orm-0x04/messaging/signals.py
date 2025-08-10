@@ -14,9 +14,9 @@ def clean_user_data(sender, instance, **kwargs):
     on_delete=models.CASCADE has taken care of the clean up
     """
     # implemented to satisfy checker requirement
-    Message.objects.filter(sender=instance).delete()
-    Message.objects.filter(receiver=instance).delete()
-    Notification.object.filter(user=instance).delete()
+    # Message.objects.filter(sender=instance).delete()
+    # Message.objects.filter(receiver=instance).delete()
+    # Notification.object.filter(user=instance).delete()
     print(f"User {instance.username} and all related data were successfully\
         deleted.")
 
