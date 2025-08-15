@@ -3,3 +3,4 @@ messaging_app/__pycache__
 db.sqlite3
 venv
 .vscode
+.env
