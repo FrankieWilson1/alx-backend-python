@@ -1,0 +1,12 @@
+#!/bin/bash
+# A script that sets up and use Kubernetes locally
+
+# Starts a kubernetes cluster
+minikube start
+
+# Verifies that the cluster is running
+kubectl cluster-info
+
+# Retrieves the available pods
+kubectl get pods
+

@@ -1,0 +1,82 @@
+# Messaging App Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: messaging-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: messaging-app
+  template:
+    metadata:
+      labels:
+        app: messaging-app
+    spec:
+      containers:
+      - name: messaging-app
+        image: "messaging-app:latest"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+
+---
+# Messaging App Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: messaging-app-service
+spec:
+  selector:
+    app: messaging-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: ClusterIP
+
+---
+# MySQL Database Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0.33
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "another_secure_password"
+        - name: MYSQL_DATABASE
+          value: "messaging_app_db"
+        - name: MYSQL_USER
+          value: "messaging_app_user"
+        - name: MYSQL_PASSWORD
+          value: "some_secure_password"
+        ports:
+        - containerPort: 3306
+
+---
+# MySQL Database Service (named 'db' for Django)
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+spec:
+  selector:
+    app: mysql
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+  type: ClusterIP
