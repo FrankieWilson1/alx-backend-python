@@ -1,0 +1,44 @@
+#!/bin/bash
+# Set shell to use Minikube's Docker daemon
+eval $(minikube docker-env)
+
+# Ensure the new Docker image exists
+IMAGE_NAME="messaging-app"
+IMAGE_TAG="2.0"
+
+if [[ -z "$(docker images -q "${IMAGE_NAME}:${IMAGE_TAG}")" ]]; then
+  echo "Docker image ${IMAGE_NAME}:${IMAGE_TAG} not found. Building it now..."
+  docker build -t "${IMAGE_NAME}:${IMAGE_TAG}" .
+  if [ $? -ne 0 ]; then
+    echo "Error: Docker image build failed. Exiting."
+    exit 1
+  fi
+else
+  echo "Docker image ${IMAGE_NAME}:${IMAGE_TAG} found. Proceeding with deployment."
+fi
+
+# Apply the updated deployment to trigger the rolling update
+echo "Applying updated deployment to trigger rolling update..."
+kubectl apply -f blue_deployment.yaml
+
+# Start a continuous curl loop in the background to check for downtime
+echo "Continuously curling the endpoint in the background to monitor for downtime..."
+while true; do
+  curl -s -o /dev/null -w "%{http_code}\n" http://localhost/api/v1/
+  sleep 1
+done &
+
+CURL_PID=$!
+echo "CURL process started with PID: $CURL_PID"
+
+# Monitor the rollout status and wait for it to complete
+echo "Monitoring rolling update status..."
+kubectl rollout status deployment messaging-app-blue-deployment
+
+# Kill the background curl process
+kill $CURL_PID
+echo "Rolling update complete. Curl process killed."
+
+# Verify the updated pods
+echo "Verifying the final pods..."
+kubectl get pods -l app=messaging-app

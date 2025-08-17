@@ -1,23 +1,30 @@
-# Official Python 3.10 image
-FROM python:3.10
+# Official Python runtime as a parent image
+FROM python:3.9-slim
 
-# Set the working directory inside the container
+# Set the working directory to /app
 WORKDIR /app
 
-# Copy the requirements file into the container
-COPY requirements.txt .
+# Set environment variables to prevent Python from writing bytecode files
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Install build dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends gcc python3-dev
+# Install system dependencies required for building mysqlclient
+RUN apt-get update && apt-get install -y \
+    default-libmysqlclient-dev \
+    pkg-config \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install python dependecies
+# Install Python dependencies from requirements.txt
+COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the applicatin code
-COPY . .
 
-# Expose the port on which the app will run
-EXPOSE 8000
+# Copy the project
+COPY . /app/
 
-# Run the Django development server
-CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Make the entrypoint script executable
+RUN chmod +x /app/entrypoint.sh
+
+# Run migrations and start the server
+CMD ["./entrypoint.sh"]

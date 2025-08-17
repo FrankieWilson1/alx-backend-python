@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Configure the shell to use Minikube's Docker daemon
+eval $(minikube docker-env)
+
+# Define the image name and tag for the new version
+IMAGE_NAME="messaging-app"
+IMAGE_TAG="v2"
+
+# Check if the Docker image already exists
+if [[ -z "$(docker images -q "${IMAGE_NAME}:${IMAGE_TAG}")" ]]; then
+  echo "Docker image ${IMAGE_NAME}:${IMAGE_TAG} not found locally."
+  echo "Building the image..."
+  docker build -t "${IMAGE_NAME}:${IMAGE_TAG}" .
+  if [ $? -ne 0 ]; then
+    echo "Error: Docker image build failed. Exiting."
+    exit 1
+  fi
+  echo "Docker image built successfully."
+else
+  echo "Docker image ${IMAGE_NAME}:${IMAGE_TAG} found. Skipping build."
+fi
+
+# Deploy the blue (current) and green (new) versions of the app
+echo "Deploying the 'blue' and 'green' versions of the app..."
+kubectl apply -f blue_deployment.yaml
+kubectl apply -f green_deployment.yaml
+
+# Deploy the service to route traffic
+echo "Deploying the service..."
+kubectl apply -f kubeservice.yaml
+
+# Give Kubernetes time to create and schedule the pods
+echo "Waiting for pods to be ready..."
+sleep 60
+
+# Get the name of a new 'green' pod
+GREEN_POD_NAME=$(kubectl get pods -l app=messaging-app,version=green -o jsonpath='{.items[0].metadata.name}')
+
+# Check the logs of the green pod for errors
+echo "Checking logs of the new green pod: $GREEN_POD_NAME"
+kubectl logs "$GREEN_POD_NAME"
+
+# Check if the deployment was successful by verifying pod status
+if [[ $(kubectl get pods -l app=messaging-app,version=green -o jsonpath='{.items[*].status.containerStatuses[0].ready}') == "true" ]]; then
+  echo "Green deployment is healthy. Traffic can be switched."
+else
+  echo "Green deployment failed. Check the logs for details."
+fi

@@ -1,175 +1,130 @@
 # Messaging Application API
 
 ## Project Overview
-This project is a backend API for a real-time messaging application, built with Django REST Framework. It provides endpoints for managing users, conversations, and messages, laying the groundwork for a robust communication platform. The application is designed to be run in a multi-container environment using Docker Compose, with a MySQL database for data persistence.
+
+This project is a backend API for a real-time messaging application, built with Django REST Framework. It provides endpoints for managing users, conversations, and messages. The application is designed to be deployed to a Kubernetes cluster and leverages a **Blue-Green deployment strategy** for seamless, zero-downtime updates.
 
 ## Features
 
-- **User Management**: API endpoints for creating, listing, retrieving, updating, and deleting user accounts with unique UUIDs.
-- **Conversation Management**:
-  - Create new conversations with multiple participants.
-  - List and retrieve existing conversations.
-  - Update and delete conversations.
-- **Message Management**:
-  - Send messages within existing conversations.
-  - List and retrieve messages for specific conversations.
-  - Update and delete messages.
-- **Django REST Framework**: Leverages DRF for efficient API development, serialization, and viewset handling.
-- **Docker Integration**: The application and its database are containerized for easy setup and consistent deployment.
+- **User, Conversation, and Message Management**: API endpoints for managing all core resources.
+- **Django REST Framework**: Leverages DRF for efficient API development.
+- **Docker Integration**: The application and its dependencies are containerized for consistent deployment across environments.
+- **Kubernetes Deployment**: All services are managed within a Kubernetes cluster for orchestration and scalability.
+- **Blue-Green Deployment**: A robust strategy is implemented to deploy new application versions with zero downtime.
 
 ## Technologies Used
 
 - Python 3.x
 - Django 5.x
 - Django REST Framework 3.x
-- Docker
-- Docker Compose
-- MySQL (for the database)
-- UUID for primary keys
+- **Docker**
+- **Kubernetes**
+- **Minikube** (for local development)
+- **MySQL** (for the database)
 
-## Setup Instructions
-
-Follow these steps to get the project up and running on your local machine using Docker Compose.
+## Setup and Deployment to Kubernetes
 
 ### Prerequisites
+
 Before you begin, ensure you have the following installed:
 - **Git**: [Download Git](https://git-scm.com/downloads)
 - **Docker**: Includes Docker Engine and Docker Compose. [Download Docker Desktop](https://www.docker.com/products/docker-desktop)
+- **Minikube**: [Install Minikube](https://minikube.sigs.k8s.io/docs/start/)
+- **kubectl**: [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ### 1. Clone the Repository
 
-First, clone this repository to your local machine:
+Clone this repository and navigate into the `messaging_app` directory:
 
 ```bash
-git clone https://github.com/FrankieWilson1/alx-backend-python/tree/main/messaging_app
+git clone https://github.com/FrankieWilson1/alx-backend-python
 cd alx-backend-python/messaging_app
 ```
 
-### 2. Create the Environment File
+### 2. Start Minikube
 
-Create a new file named `.env` in the `messaging_app` directory. This file will securely store your database credentials. Add the following content to the file, and replace the placeholder passwords with secure values of your own:
-
-```
-MYSQL_DATABASE=messaging_app_db
-MYSQL_USER=messaging_app_user
-MYSQL_PASSWORD="your_secure_password"
-MYSQL_ROOT_PASSWORD="your_root_password"
-```
-
-### 3. Build and Run the Services
-
-Use Docker Compose to build the application image and start both the web and db services. The `--build` flag is used here to ensure the latest changes are incorporated.
+Start your local Kubernetes cluster with Minikube. This command sets up the environment and enables the ingress addon.
 
 ```bash
-docker compose up --build -d
+minikube start --driver=docker --addons=ingress
+eval $(minikube docker-env)
 ```
 
-**Note**: If you encounter a docker-buildx error, run `docker build -t messaging-app .` first, then run `docker compose up -d`.
+### 3. Deploy to Kubernetes
 
-### 4. Run Database Migrations
+The deployment process is automated using the `kubctl-0x02` script. This script builds your Docker image, creates the necessary Kubernetes resources, and deploys both the "blue" (current) and "green" (new) versions of your application.
 
-Once the services are up, run the Django database migrations to create the necessary tables. This command is executed inside the running web container.
+First, ensure your secrets are configured. Create a file named `secrets.yaml` and apply it:
+
+```yaml
+# secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secrets
+type: Opaque
+stringData:
+  MYSQL_USER: "messaging_app_user"
+  MYSQL_PASSWORD: "some_secure_password"
+  MYSQL_DATABASE: "messaging_app_db"
+```
+
+Then, apply the secrets:
 
 ```bash
-docker compose exec web python manage.py migrate
+kubectl apply -f secrets.yaml
 ```
 
-### 5. Create a Superuser (Optional but Recommended)
-
-To access the Django admin panel, create a superuser:
+Next, run the deployment script:
 
 ```bash
-docker compose exec web python manage.py createsuperuser
+chmod +x kubctl-0x02
+./kubctl-0x02
 ```
 
-### 6. Access the API
+This script will handle the build of the new Docker image and the deployment of all necessary Kubernetes manifests (`blue_deployment.yaml`, `green_deployment.yaml`, `kubeservice.yaml`).
 
-The API will be accessible at `http://127.0.0.1:8000/`. The web service is automatically restarted if you make changes to your Django code.
+### 4. Switch Traffic (Blue-Green)
+
+After the script confirms the green deployment is healthy, you can switch all user traffic to the new version by changing the selector in `kubeservice.yaml` and applying the update.
+
+```yaml
+# kubeservice.yaml (after update)
+...
+spec:
+  selector:
+    app: messaging-app
+    version: green # Change from 'blue' to 'green'
+...
+```
+
+Apply the updated service configuration:
+
+```bash
+kubectl apply -f kubeservice.yaml
+```
+
+### 5. Access the API
+
+To access the API from your local machine, run the `minikube tunnel` command in a separate terminal window and keep it running.
+
+```bash
+minikube tunnel
+```
+
+Then, you can access the API at `http://localhost/api/v1/`.
 
 ## API Endpoints
 
-The following API endpoints are available under the `/api/` prefix:
+The API endpoints remain the same:
 
-### Users
-
-- **Endpoints for managing user accounts**. Users can be created, listed, retrieved, updated, and deleted.
-  
-  **List all users / Create a new user**:
-  - **URL**: `/api/users/`
-  - **Method**: GET (list), POST (create)
-  
-  **POST Request Body Example (JSON)**:
-  ```json
-  {
-    "first_name": "Jane",
-    "last_name": "Doe",
-    "email": "jane.doe@example.com",
-    "phone_number": "+1234567890",
-    "role": "participant",
-    "password": "strong-secure-password-123"
-  }
-  ```
-  **Note**: The password is required for creation and will be automatically hashed by the API. The user_id and created_at are read-only and generated automatically.
-
-  **Permissions**: IsAuthenticated (for GET), AllowAny (for POST, depending on project requirements)
-
-- **Retrieve, Update, or Delete a specific user**:
-  - **URL**: `/api/users/{user_id}/` (e.g., `/api/users/a1b2c3d4-e5f6-7890-1234-567890abcdef/`)
-  - **Method**: GET (retrieve), PUT/PATCH (update), DELETE (delete)
-  
-  **Permissions**: IsAuthenticated (e.g., IsOwnerOrAdmin for update/delete, IsAuthenticated for retrieve)
-
-### Conversations
-
-- **List all conversations / Create a new conversation**:
-  - **URL**: `/api/conversations/`
-  - **Method**: GET (list), POST (create)
-  
-  **POST Request Body Example (JSON)**:
-  ```json
-  {
-    "topic": "Daily Standup",
-    "participants_id": ["uuid-of-user1", "uuid-of-user2"]
-  }
-  ```
-  **Note**: The participants_id should be a list of UUID strings of existing users. The authenticated user making the request will be automatically added as a participant if not already included.
-
-  **Permissions**: IsAuthenticated
-
-- **Retrieve, Update, or Delete a specific conversation**:
-  - **URL**: `/api/conversations/{conversation_id}/` (e.g., `/api/conversations/a1b2c3d4-e5f6-7890-1234-567890abcdef/`)
-  - **Method**: GET (retrieve), PUT/PATCH (update), DELETE (delete)
-  
-  **Permissions**: IsAuthenticated (e.g., IsParticipant or IsOwner)
-
-### Messages
-
-- **List all messages / Send a new message**:
-  - **URL**: `/api/messages/`
-  - **Method**: GET (list), POST (create)
-  
-  **POST Request Body Example (JSON)**:
-  ```json
-  {
-    "conversation": "uuid-of-the-conversation",
-    "message_body": "Hello, team!"
-  }
-  ```
-  **Note**: The sender field is automatically set to the authenticated user.
-
-  **Permissions**: IsAuthenticated
-
-- **Retrieve, Update, or Delete a specific message**:
-  - **URL**: `/api/messages/{message_id}/` (e.g., `/api/messages/a0b0c0d0-e0f0-1000-2000-300040005000/`)
-  - **Method**: GET (retrieve), PUT/PATCH (update), DELETE (delete)
-  
-  **Permissions**: IsAuthenticated (e.g., IsSender or IsOwner)
+- Users: `/api/users/`
+- Conversations: `/api/conversations/`
+- Messages: `/api/messages/`
 
 ## Testing the API
 
-You can test the API using tools like:
+You can test the API using tools like curl or Postman.
 
-- **Browser**: Navigate to `http://127.0.0.1:8000/api/` to see the browsable API endpoints.
-- **curl**: Command-line tool for making requests.
-- **Postman / Insomnia**: Desktop API client tools.
-- **Python requests library**: For programmatic testing.
+```bash
+curl http://localhost/api/v1/
