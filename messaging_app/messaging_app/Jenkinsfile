@@ -1,14 +1,14 @@
 pipeline {
     agent {
         docker {
-            image 'jenkins/jenkins:lts'
-            args '-u: 0:0'
+            image 'jenkins/jenkins:lts-jdk17'
+            args '-u 0:0'
         }
     }
     stages {
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'github-credentials', url: 'https://github.com/FrankieWilson1/alx-backend-python', branch: 'main'
+                git credentialsId: 'github-credentials', url: 'https://github.com/FrankieWilson1/alx-backend-python.git', branch: 'main'
             }
         }
         stage('Install Dependencies') {
@@ -19,19 +19,20 @@ pipeline {
                 '''
             }
         }
-        stage('Run Tests') {
+        stage('Run Tests and Generate Report') {
             steps {
                 dir('messaging_app') {
                     sh '''
+                        # Install dependencies and run pytest
                         python3 -m venv venv
                         source venv/bin/activate
-                        pip3 install -r messaging_app/requirements.txt
+                        pip3 install -r requirements.txt
                         pytest --junitxml=test-reports/junit-report.xml
-                        deactivate
                     '''
                 }
+                // The 'junit' step needs to be inside a 'steps' block
+                junit 'messaging_app/test-reports/junit-report.xml'
             }
-            junit 'messaging_app/test-reports/junit-report.xml'
         }
     }
 }
