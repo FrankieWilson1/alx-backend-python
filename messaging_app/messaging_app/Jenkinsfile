@@ -34,6 +34,7 @@ pipeline {
                         pytest --junitxml=test-reports/junit-report.xml
                     '''
                 }
+                // This step must be within the `steps` block.
                 junit 'messaging_app/test-reports/junit-report.xml'
             }
         }
