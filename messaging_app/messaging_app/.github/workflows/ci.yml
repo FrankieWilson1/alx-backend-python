@@ -1,0 +1,50 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_DATABASE: messaging_db
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y default-libmysqlclient-dev
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+        working-directory: ./messaging_app
+
+      - name: Wait for MySQL to be ready
+        run: |
+          sleep 10s
+          
+      - name: Run Django migrations and tests
+        env:
+          DATABASE_URL: mysql://root:root_password@127.0.0.1:3306/messaging_db
+        run: |
+          python manage.py migrate
+          pytest
+        working-directory: ./messaging_app
