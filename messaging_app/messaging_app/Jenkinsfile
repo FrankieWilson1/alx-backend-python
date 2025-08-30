@@ -5,10 +5,14 @@ pipeline {
             args '-u 0:0'
         }
     }
+    environment {
+        DOCKER_USERNAME = 'wilsonfrankie'
+        IMAGE_NAME = 'messaging_app'
+    }
     stages {
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'github-credentials', url: 'https://github.com/FrankieWilson1/alx-backend-python.git', git branch: 'main'
+                git credentialsId: 'github-credentials', url: 'https://github.com/FrankieWilson1/alx-backend-python.git', branch: 'main'
             }
         }
         stage('Install Dependencies') {
@@ -26,7 +30,7 @@ pipeline {
                         # Install dependencies and run pytest
                         python3 -m venv venv
                         source venv/bin/activate
-                        pip3 install -r messaging_app/requirements.txt
+                        pip install -r requirements.txt
                         pytest --junitxml=test-reports/junit-report.xml
                     '''
                 }
@@ -34,6 +38,13 @@ pipeline {
                 junit 'messaging_app/test-reports/junit-report.xml'
             }
         }
+        stage('Build and Push Docker Image') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                    sh "docker build -t ${DOCKER_USERNAME}/${IMAGE_NAME}:${env.BUILD_NUMBER} ./messaging_app"
+                    sh "docker push ${DOCKER_USERNAME}/${IMAGE_NAME}:${env.BUILD_NUMBER}"
+            }
+        }
     }
 }
-
