@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     services:
       mysql:
         image: mysql:8.0
@@ -35,16 +35,29 @@ jobs:
           sudo apt-get install -y default-libmysqlclient-dev
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          # Install code quality tools
+          pip install flake8 pytest-cov
+        working-directory: ./messaging_app
+
+      - name: Run Flake8 Code Linting
+        run: |
+          flake8 .
         working-directory: ./messaging_app
 
       - name: Wait for MySQL to be ready
         run: |
           sleep 10s
           
-      - name: Run Django migrations and tests
+      - name: Run Django migrations and tests with coverage
         env:
           DATABASE_URL: mysql://root:root_password@127.0.0.1:3306/messaging_db
         run: |
           python manage.py migrate
-          pytest
+          pytest --cov=. --cov-report=xml
         working-directory: ./messaging_app
+
+      - name: Upload code coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: ./messaging_app/coverage.xml
