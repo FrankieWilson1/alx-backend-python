@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
@@ -7,7 +7,8 @@ from .models import User, Message, Conversation
 from .serializers import (
     UserSerializer,
     ConversationSerializer,
-    MessageSerializer
+    MessageSerializer,
+    UserRegisterSerializer,
 )
 from .filters import MessageFilter
 
@@ -70,3 +71,12 @@ class MessageViewSet(viewsets.ModelViewSet):
             pk=self.kwargs['conversation_pk'],
         )
         serializer.save(sender=self.request.user, conversation=conversation)
+
+
+class UserRegistrationView(generics.CreateAPIView):
+    """
+    A view set for registering new users.
+    """
+    serializer_class = UserRegisterSerializer
+    permission_classes = ()  # Override default `isAuthenticated` permission
+    #                           and allows any user to access this endpoint

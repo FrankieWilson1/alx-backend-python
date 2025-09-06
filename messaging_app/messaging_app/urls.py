@@ -5,8 +5,17 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from chats.views import UserRegistrationView
+from .loging_views import LoginView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(
+        'api/v1/register/',
+        UserRegistrationView.as_view(),
+        name='register'
+    ),
+    path('login/', LoginView.as_view(), name='login'),
     path('api/v1/', include('chats.urls')),
     path(
         'api/v1/token/',

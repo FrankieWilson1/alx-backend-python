@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="submit">Get Token</button>
+    </form>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/token/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    resultDiv.innerHTML = `Error: ${JSON.stringify(error, null, 2)}`;
+                    return;
+                }
+
+                const data = await response.json();
+                resultDiv.innerHTML = `Access Token: <strong>${data.access}</strong><br><br>Refresh Token: <strong>${data.refresh}</strong>`;
+
+            } catch (error) {
+                resultDiv.innerHTML = `An error occurred: ${error}`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -4,3 +4,4 @@ db.sqlite3
 venv
 .vscode
 .env
+chats/API.md

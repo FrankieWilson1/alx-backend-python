@@ -61,7 +61,9 @@ ROOT_URLCONF = 'messaging_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,9 +82,9 @@ WSGI_APPLICATION = 'messaging_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('MYSQL_DB', 'messaging_app_db'),   
+        'NAME': os.getenv('MYSQL_DB', 'messaging_app_db'),
         'USER': os.environ.get('MYSQL_USER', 'messaging_app_user'),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'some_secure_password'),
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'skullisland$1'),
         'HOST': 'db',
         'PORT': '3306',
     }
