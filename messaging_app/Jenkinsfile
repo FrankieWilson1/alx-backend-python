@@ -1,16 +1,15 @@
 pipeline {
-    agent {
-        docker {
-            image 'docker/compose:1.29.2'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
     stages {
-        stage('Build and Run Tests') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building Docker image and running tests...'
+                echo 'Building Docker image...'
                 sh 'docker-compose build web'
-                sh 'docker-compose up -d'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                echo 'Running Django tests...'
                 sh 'docker-compose exec web python manage.py test'
             }
         }
