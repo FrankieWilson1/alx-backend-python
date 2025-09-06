@@ -2,9 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Install Docker Compose') {
+            echo 'Installing Docker Compose...'
+            sh 'apk add --no-cache docker-compose'
+        }
+    }
+
+    stages {
         stage('Build Docker Image') {
             steps {
-                echo 'Building...'
+                echo 'Building Docker image...'
                 sh 'docker-compose build web'
             }
         }
@@ -12,12 +19,6 @@ pipeline {
         stage('Run Test') {
             steps {
                 echo 'Running Django Tests...'
-                sh 'docker-compose exec web python manage.py test'
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                echo 'Running Django tests...'
                 sh 'docker-compose exec web python manage.py test'
             }
         }
