@@ -3,8 +3,10 @@ pipeline {
 
     stages {
         stage('Install Docker Compose') {
-            echo 'Installing Docker Compose...'
-            sh 'apk add --no-cache docker-compose'
+            steps {
+                echo 'Installing Docker Compose...'
+                sh 'apk add --no-cache docker-compose'
+            }
         }
     }
 
@@ -25,3 +27,4 @@ pipeline {
         // deploy stage
     }
 }
+
