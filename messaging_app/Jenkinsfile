@@ -5,7 +5,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Updating package list and installing Docker Compose...'
-                sh 'apt-get update && apt-get install -y docker-compose'
+                sh 'sudo apt-get update && apt-get install -y docker-compose'
             }
         }
         
@@ -24,3 +24,4 @@ pipeline {
         }
     }
 }
+
